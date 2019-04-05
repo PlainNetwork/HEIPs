@@ -1,11 +1,14 @@
 ---
-eip: 2
 title: 하드포크 홈스테드(Homestead) 변경사항
-author: Vitalik Buterin <v@buterin.com>
-status: Final
-type: Standards Track
-category: Core
-created: 2015-11-15
+author: Ludorum <ludy@plain.network>
+updated: 2019-04-06
+status: Draft
+eip: 2
+eip-author: Vitalik Buterin <v@buterin.com>
+eip-status: Final
+eip-type: Standards Track
+eip-category: Core
+eip-created: 2015-11-15
 ---
 
 ### Meta 참조문서
