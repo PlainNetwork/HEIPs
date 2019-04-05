@@ -13,12 +13,11 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Ethereum Improvement Proposals
+title: 이더리움 개선 제안 번역 및 해설
 description: >-
-  Ethereum Improvement Proposals (EIPs) describe standards for the Ethereum
-  platform, including core protocol specifications, client APIs, and contract
-  standards.
-url: "http://eips.ethereum.org"
+  이 프로젝트를 통해 이더리움 플랫폼 표준(코어 프로토콜, 클라이언트 API, 컨트랙트 표준)인
+  이더리움 개선 제안(EIP)들을 번역하고 해설합니다.
+url: "http://eips.plain.id"
 twitter_username: ethereum
 github_username:  PlainNetwork
 header_pages:
