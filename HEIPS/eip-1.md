@@ -1,12 +1,15 @@
 ---
-eip: 1
 title: EIP의 목적과 가이드라인
-status: Active
-type: Meta
-author: Ludorum Jeoun <ludy@plain.network> Hun Ryu <hunryu@plain.network>
-        https://github.com/PlainNetwork/EIPs/blob/master/EIPS/eip-1.md
-created: 2019-04-02
-updated: 2019-04-02
+author: Hun Ryu <hunryu@plain.network>
+updated: 2019-04-10
+status: Draft
+eip: 1
+eip-author: Martin Becze <mb@ethereum.org>, Hudson Jameson <hudson@ethereum.org>, and others
+        https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md
+eip-status: Active
+eip-type: Meta
+eip-created: 2015-10-27
+eip-updated: 2015-12-07, 2016-02-01, 2018-03-21, 2018-05-29, 2018-10-17
 ---
 
 ## Handy EIP
