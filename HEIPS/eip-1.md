@@ -30,9 +30,8 @@ EIP에는 3가지 타입이 존재합니다:
   - **Networking** - [devp2p]([EIP8]) 및 [Light Ethereum Subprotocol]을 포함하여 [Whisper] & [Swarm]과 같은 네트워크 프로토콜 스펙에 대한 개선 제안도 포함됩니다.
   - **Interface** - ([EIP6]) 및 [Contract ABIs]와 같은 리네이밍(Renaming)을 포함하여 클라이언트 [API/RPC] 스펙과 표준에 대한 개선 사항입니다. 이는 EIP 리포지토리에 제출 되기 이전에 [interface repo]에서 사전 논의가 되어야 합니다.
   - **ERC** - ([ERC20]) 토큰 표준과 같은 컨트랙트 표준, ([ERC26], [ERC137])과 같은 이름 등록 방식, ([ERC67])과 같은 URI 양식, ([EIP82])과 같은 라이브러리/패키지 포맷, 그리고 ([EIP75], [EIP85])과 같은 지갑 포맷을 포함한 어플리케이션 레벨의 표준입니다.
-- **Informational EIP**
-- An **Informational EIP** describes an Ethereum design issue, or provides general guidelines or information to the Ethereum community, but does not propose a new feature. Informational EIPs do not necessarily represent Ethereum community consensus or a recommendation, so users and implementers are free to ignore Informational EIPs or follow their advice.
-- A **Meta EIP** describes a process surrounding Ethereum or proposes a change to (or an event in) a process. Process EIPs are like Standards Track EIPs but apply to areas other than the Ethereum protocol itself. They may propose an implementation, but not to Ethereum's codebase; they often require community consensus; unlike Informational EIPs, they are more than recommendations, and users are typically not free to ignore them. Examples include procedures, guidelines, changes to the decision-making process, and changes to the tools or environment used in Ethereum development. Any meta-EIP is also considered a Process EIP.
+- **Informational EIP**는 이더리움의 디자인 이슈 혹은 이더리움의 보편적인 가이드라인 및 설명에 대한 제안이며, 새로운 기능은 제안하지 않습니다. Informational EIP는 이더리움 커뮤니티의 합의된 사항이라던지 권고사항이 아니며, 사용자와 개발자는 사실상 이를 무시해도 무관합니다.
+- **Meta EIP**는 이더리움 프로세스 혹은 해당 프로세스에 대한 변경 사항을 제안합니다. 모든 Meta EIP는 Process EIP입니다. Process EIP는 Standards Track EIP와 비슷하지만 이더리움 프로토콜 이외의 분야에 적용됩니다. 이더리움 발전에 반영되는 안을 제안할 수 있으나 이더리움의 코드에는 반영되지 않습니다. 또한, 커뮤니티의 합의를 도모해야할 수 있습니다. Informational EIP와는 다르게 이는 권고 사항이며, 사용자들은 이를 무시할 수 없습니다. 프로세스 관련 사항, 가이드라인, 의사 결정 과정에 대한 변경 사항, 그리고 이더리움 개발 도구들에 대한 변경 사항도 이에 포함됩니다.
 
 It is highly recommended that a single EIP contain a single key proposal or new idea. The more focused the EIP, the more successful it tends to be. A change to one client doesn't require an EIP; a change that affects multiple clients, or defines a standard for multiple apps to use, does.
 
