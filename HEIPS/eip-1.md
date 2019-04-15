@@ -80,55 +80,56 @@ EIP는 다음과 같은 사항들을 포함해야 합니다:
 - 서론(Preamble) - EIP 넘버, 간략한 설명을 해주는 타이틀(44글자 제한)과 같이 해당 EIP에 대한 메타데이터가 명시된 RFC 822 스타일의 헤더를 포함합니다. [여기](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md#eip-header-preamble)를 클릭하면 이에 대한 자세한 정보를 보실 수 있습니다.
 - 개요(Simple Summary) - "간단히 설명할 수 없다면 충분히 이해하고 있는 것이 아니다." 해당 EIP에 대해 비전문가 역시 이해할 수 있을 정도의 간소화된 설명을 포함해야 합니다. 
 - 추상적 개념(Abstract) - 200단어 이내로 기술적 이슈를 설명해야 합니다.
-- 동기(Motivation) (*선택적) - 특히 이더리움 프로토콜을 변경하고자 하는 EIP에 동기는 매우 중요합니다. 기존 프로토콜 스펙이 왜 적절하지 않은 지에 대해 명백히 설명해야 합니다. 충분하지 않은 동기 없이 제출되는 EIP는 거부될 수 있습니다.
+- 동기(Motivation) (선택적) - 특히 이더리움 프로토콜을 변경하고자 하는 EIP에 동기는 매우 중요합니다. 기존 프로토콜 스펙이 왜 적절하지 않은 지에 대해 명백히 설명해야 합니다. 충분하지 않은 동기 없이 제출되는 EIP는 거부될 수 있습니다.
 - 스펙(Specification) - 새로운 기능에 대한 컴퓨터 공학적인 문법과 의미를 설명하는 기술적 스펙을 포함해야 합니다. 해당 스펙은 기존의 이더리움 플랫폼(cpp-ethereum, go-ethereum, parity, ethereumJ, ethereumjs-lib, 및 [기타](https://github.com/ethereum/wiki/wiki/Clients))과 상호 운용될 수 있는 지에 대해 논의될 수 있을 만큼 자세해야 합니다.
 - 근거(Rationale) - 근거는 해당 설계의 동기에 대해 설명하고 왜 이러한 설계가 결정되었는 지에 대해 서술하며 이전 스펙 과정을 구체화합니다. 이 단계에서는 그동안 고려되었던 대안과 관련 작업들을 설명해야 합니다. 해당 기능이 여타 프로그래밍 언어로 어떻게 지원되는 지에 대한 설명도 이에 포함됩니다. 또한, 커뮤니티의 합의에 대한 증거를 제시해야 하고 이전에 논의되었던 중요한 이의 사안들에 대해 논하여야 합니다.
 - 호환성(Backwards Compatibility) - 호환성이 불가능한 점을 나타낸 모든 EIP는 비호환성 및 이에 대한 심각성을 서술하는 란을 반드시 포함해야 합니다. 해당 EIP는 이러한 비호환성을 어떠한 방식으로 해결할 지에 대해 반드시 설명해야합니다. 비호환성에 대해 충분히 다뤄지지 않은 EIP는 거부될 수 있습니다.
-- 시험 사례(Test Cases) - 
-- Test Cases - Test cases for an implementation are mandatory for EIPs that are affecting consensus changes. Other EIPs can choose to include links to test cases if applicable.
-- Implementations - The implementations must be completed before any EIP is given status “Final”, but it need not be completed before the EIP is merged as draft. While there is merit to the approach of reaching consensus on the specification and rationale before writing code, the principle of “rough consensus and running code” is still useful when it comes to resolving many discussions of API details.
-- Copyright Waiver - All EIPs must be in the public domain. See the bottom of this EIP for an example copyright waiver.
+- 시험 사례(Test Cases) - 컨센서스와 관련된 변경 사항을 포함한 EIP는 시험 사례가 필수로 요구됩니다. 이를 제외한 EIP는 가능한 경우 링크를 포함할 수 있습니다.
+- 구현(Implementations) - 기술적 구현은 "Final" 상태를 부여받기 전 반드시 끝나야 한다. 코드를 작성하기 전 스펙과 근거에 대한 합의점을 도출하는 것 역시 가치 있지만, "거친 의견 일치와 작동하는 코드 aka 일단 닥치고 코딩(Rough consensus and running code)"은 API 디테일에 대한 수 많은 논의를 해결하는 데 여전히 유용합니다.
+- 저작권 면제 - 모든 EIP는 퍼블릭 도메인이어야 합니다. 저작권 면제에 대한 예시는 이 글의 하단에서 확인할 수 있습니다.
 
-## EIP Formats and Templates
+## EIP 포맷과 템플릿
 
-EIPs should be written in [markdown] format.
-Image files should be included in a subdirectory of the `assets` folder for that EIP as follow: `assets/eip-X` (for eip **X**). When linking to an image in the EIP, use relative links such as `../assets/eip-X/image.png`.
+EIP는 [markdown] 포맷으로 작성되어야 합니다.
+이미지 파일은 `assets/eip-X` 같이 해당 EIP 내 `assets` 폴더의 서브디렉터리에 포함되어야 합니다. 이미지를 EIP에 링크하는 경우 `../assets/eip-X/image.png`와 같은 관련 링크를 사용하면 됩니다.
 
-## EIP Header Preamble
+## EIP 헤더 서론
 
-Each EIP must begin with an RFC 822 style header preamble, preceded and followed by three hyphens (`---`). The headers must appear in the following order. Headers marked with "*" are optional and are described below. All other headers are required.
+각 EIP는 3개의 하이픈(`---`)이 앞뒤로 포함된 RFC 822 스타일의 헤더 서론으로 시작되어야 합니다. 헤더는 아래와 같은 순서로 나타납니다. "*"로 마크된 헤더는 선택적이지만 다른 헤더들은 요구됩니다.
 
+` eip:` <EIP 넘버> (이는 EIP 편집자에 의해 결정되고 부여됩니다)
 ` eip:` <EIP number> (this is determined by the EIP editor)
 
+` title:` <EIP 타이틀>
 ` title:` <EIP title>
+        
+` author:` <저자의 이름 혹은 유저네임, 그리고 이메일>
 
-` author:` <a list of the author's or authors' name(s) and/or username(s), or name(s) and email(s). Details are below.>
-
-` * discussions-to:` \<a url pointing to the official discussion thread\>
+` * discussions-to:` \<공식적인 논의가 이뤄진 스레드(thread) 링크\>
 
 ` status:` <Draft | Last Call | Accepted | Final | Active | Deferred | Rejected | Superseded>
 
-`* review-period-end:` <date review period ends>
+`* review-period-end:` <리뷰 종료 날짜>
 
 ` type:` <Standards Track (Core, Networking, Interface, ERC)  | Informational | Meta>
 
 ` * category:` <Core | Networking | Interface | ERC>
 
-` created:` <date created on>
+` created:` <생성된 날짜>
 
-` * updated:` <comma separated list of dates>
+` * updated:` <업데이트된 날짜들>
 
-` * requires:` <EIP number(s)>
+` * requires:` <요구되는 EIP 넘버>
 
-` * replaces:` <EIP number(s)>
+` * replaces:` <대체되는 EIP 넘버>
 
-` * superseded-by:` <EIP number(s)>
+` * superseded-by:` <Superseded된 EIP 넘버>
 
-` * resolution:` \<a url pointing to the resolution of this EIP\>
+` * resolution:` \<해당 EIP에 대한 결의안 링크\>
 
-Headers that permit lists must separate elements with commas.
+다수의 답변이 허용되는 헤더들은 컴마로 구분할 수 있습니다.
 
-Headers requiring dates will always do so in the format of ISO 8601 (yyyy-mm-dd).
+날짜를 요구하는 헤더들은 항상 ISO 8601 (yyyy-mm-dd) 포맷을 따릅니다.
 
 #### `author` header
 
