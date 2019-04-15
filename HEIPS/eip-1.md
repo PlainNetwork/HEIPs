@@ -98,10 +98,8 @@ EIP는 [markdown] 포맷으로 작성되어야 합니다.
 각 EIP는 3개의 하이픈(`---`)이 앞뒤로 포함된 RFC 822 스타일의 헤더 서론으로 시작되어야 합니다. 헤더는 아래와 같은 순서로 나타납니다. "*"로 마크된 헤더는 선택적이지만 다른 헤더들은 요구됩니다.
 
 ` eip:` <EIP 넘버> (이는 EIP 편집자에 의해 결정되고 부여됩니다)
-` eip:` <EIP number> (this is determined by the EIP editor)
 
 ` title:` <EIP 타이틀>
-` title:` <EIP title>
         
 ` author:` <저자의 이름 혹은 유저네임, 그리고 이메일>
 
@@ -131,87 +129,86 @@ EIP는 [markdown] 포맷으로 작성되어야 합니다.
 
 날짜를 요구하는 헤더들은 항상 ISO 8601 (yyyy-mm-dd) 포맷을 따릅니다.
 
-#### `author` header
+#### `author` 헤더
 
-The `author` header optionally lists the names, email addresses or usernames of the authors/owners of the EIP. Those who prefer anonymity may use a username only, or a first name and a username. The format of the author header value must be:
+`author` 헤더는 해당 EIP 저자의 이름, 이메일 주소, 혹은 유저네임을 선택적으로 포함해야 합니다. 익명을 선호하는 저자는 유저네임만 사용하거나 성을 제외한 이름을 사용할 수 있습니다. 저자 헤더의 포맷은 다음과 같습니다:
 
 > Random J. User &lt;address@dom.ain&gt;
 
-or
+혹은
 
 > Random J. User (@username)
 
-if the email address or GitHub username is included, and
+이메일/깃헙 유저네임이 포함된 경우,
 
 > Random J. User
 
-if the email address is not given.
+이메일 주소가 포함되지 않은 경우.
 
-#### `resolution` header
+#### `resolution` 헤더
+`resolution` 헤더는 Standards Track EIP에만 요구됩니다. 해당 EIP에 대한 선언문이 생성된 여타 웹 사이트 혹은 이메일 메시지에 대한 URL 링크를 포함해야 합니다.
 
-The `resolution` header is required for Standards Track EIPs only. It contains a URL that should point to an email message or other web resource where the pronouncement about the EIP is made.
+#### `discussions-to` 헤더
 
-#### `discussions-to` header
+EIP가 드래프트인 경우 `discussions-to` 헤더는 해당 EIP에 대해 논의 중인 메일링 리스트 혹은 URL 링크를 연결하기 위해 사용됩니다. 앞서 언급된 바외 같이 EIP에 대해 논의할 수 있는 장은 [Ethereum topics on Gitter](https://gitter.im/ethereum/topics), [Ethereum Magicians](https://ethereum-magicians.org/), [Reddit r/ethereum](https://www.reddit.com/r/ethereum/) 등이 있습니다.
 
-While an EIP is a draft, a `discussions-to` header will indicate the mailing list or URL where the EIP is being discussed. As mentioned above, examples for places to discuss your EIP include [Ethereum topics on Gitter](https://gitter.im/ethereum/topics), an issue in this repo or in a fork of this repo, [Ethereum Magicians](https://ethereum-magicians.org/) (this is suitable for EIPs that may be contentious or have a strong governance aspect), and [Reddit r/ethereum](https://www.reddit.com/r/ethereum/).
+해당 EIP가 저자와 개인적으로 논의 중인 경우 `discussions-to`는 필요하지 않습니다.
 
-No `discussions-to` header is necessary if the EIP is being discussed privately with the author.
+또한, `discussions-to`는 깃헙 pull request에 링크를 걸 수 없습니다.
 
-As a single exception, `discussions-to` cannot point to GitHub pull requests.
+#### `type` 헤더
 
-#### `type` header
+`type` 헤더는 Standards Track, Meta, Informational과 같은 EIP 타입을 정합니다. 만약 Standards Track인 경우 Core, Networking, Interface, ERC 가운데 하나를 포함해야 합니다.
 
-The `type` header specifies the type of EIP: Standards Track, Meta, or Informational. If the track is Standards please include the subcategory (core, networking, interface, or ERC).
+#### `category` 헤더
 
-#### `category` header
+`category` 헤더는 EIP의 카테고리를 세분화합니다. 이는 Standards Track인 경우에만 해당합니다.
 
-The `category` header specifies the EIP's category. This is required for standards-track EIPs only.
+#### `created` 헤더
 
-#### `created` header
+`created` 헤더는 해당 EIP가 넘버를 부여받은 날짜를 기록합니다. 이 헤더는 1991-10-02과 같이 yyyy-mm-dd 포맷으로 작성되어야 합니다.
 
-The `created` header records the date that the EIP was assigned a number. Both headers should be in yyyy-mm-dd format, e.g. 2001-08-14.
+#### `updated` 헤더
 
-#### `updated` header
+`updated` 헤더는 해당 EIP에 대해 중요한 변경 사항이 반영된 날짜를 기록합니다. 이 헤더는 Draft 혹은 Active 상태의 EIP에만 해당됩니다.
 
-The `updated` header records the date(s) when the EIP was updated with "substantional" changes. This header is only valid for EIPs of Draft and Active status.
+#### `requires` 헤더
 
-#### `requires` header
+EIP는 해당 EIP가 기반으로 하는 EIP의 넘버를 표시할 수 있습니다. 
 
-EIPs may have a `requires` header, indicating the EIP numbers that this EIP depends on.
+#### `superseded-by` 및 `replaces` 헤더
 
-#### `superseded-by` and `replaces` headers
+최신 EIP에 의해 더 이상 필수로 요구되지 않는 EIP인 경우 `superseded-by` 헤더를 포함할 수 있습니다. 해당 헤더에는 최신 EIP의 넘버를 입력합니다. 최신 EIP는 `replaces` 헤더에 대체하기 이전에 사용되던 EIP의 넘버를 포함할 수 있습니다.
 
-EIPs may also have a `superseded-by` header indicating that an EIP has been rendered obsolete by a later document; the value is the number of the EIP that replaces the current document. The newer EIP must have a `replaces` header containing the number of the EIP that it rendered obsolete.
+## 보조 파일
 
-## Auxiliary Files
+EIP는 다이어그램과 같은 보조 파일을 포함할 수 있씁니다. 파일의 이름은 EIP-XXXX-Y.ext로 기록되어 있어야 합니다. XXXX는 EIP 넘버이고, Y는 시리얼 넘버(1부터 시작)이며, ext는 png와 같은 실제 파일 형식을 대체합니다.
 
-EIPs may include auxiliary files such as diagrams. Such files must be named EIP-XXXX-Y.ext, where “XXXX” is the EIP number, “Y” is a serial number (starting at 1), and “ext” is replaced by the actual file extension (e.g. “png”).
+## EIP 소유권 이전
 
-## Transferring EIP Ownership
+가끔 새로운 저자에게 EIP의 소유권을 이전하는 경우가 발생합니다. 기존 저자를 이전한 EIP의 공동 저자로 유지하고 싶으나 이는 전적으로 기존 저자의 선택에 달려 있습니다. 소유권 이전이 발생하는 이유는 여러가지 입니다. 저자가 더 이상 기여할 여력이 안되는 경우, 더 이상 흥미를 느끼지 않는 경우, 더 이상 연락이 안되는 경우 등이 존재합니다. 혹은 해당 EIP의 방향성에 대해 더 이상 동의하지 않아서일 수도 있습니다. 이더리움은 모든 EIP에 대해 합의를 이루고자 노력하나 만약 불가능한 경우 이에 상응하는 EIP를 제출할 수 있습니다.
 
-It occasionally becomes necessary to transfer ownership of EIPs to a new champion. In general, we'd like to retain the original author as a co-author of the transferred EIP, but that's really up to the original author. A good reason to transfer ownership is because the original author no longer has the time or interest in updating it or following through with the EIP process, or has fallen off the face of the 'net (i.e. is unreachable or isn't responding to email). A bad reason to transfer ownership is because you don't agree with the direction of the EIP. We try to build consensus around an EIP, but if that's not possible, you can always submit a competing EIP.
+만약 특정 EIP 소유권에 관심있다면 기존 저자 혹은 EIP 편집자에게 메시지를 보내면 됩니다. 만약 기존 저자로부터 답장을 받지 못하는 경우 EIP 편집자가 단독적인 결정을 할 수 있습니다. 단, 이러한 결정은 충분히 되돌려 질 수 있습니다.
 
-If you are interested in assuming ownership of an EIP, send a message asking to take over, addressed to both the original author and the EIP editor. If the original author doesn't respond to email in a timely manner, the EIP editor will make a unilateral decision (it's not like such decisions can't be reversed :)).
+## EIP 편집자
 
-## EIP Editors
+현재 EIP 편집자는 다음과 같습니다:
 
-The current EIP editors are
+` * 닉 존슨(Nick Johnson) (@arachnid)`
 
-` * Nick Johnson (@arachnid)`
+` * 캐시 디트리오(Casey Detrio) (@cdetrio)`
 
-` * Casey Detrio (@cdetrio)`
+` * 허드슨 제임슨(Hudson Jameson) (@Souptacular)`
 
-` * Hudson Jameson (@Souptacular)`
+` * 비탈릭 뷰테린(Vitalik Buterin) (@vbuterin)`
 
-` * Vitalik Buterin (@vbuterin)`
+` * 닉 세이버스(Nick Savers) (@nicksavers)`
 
-` * Nick Savers (@nicksavers)`
+` * 마틴 비지(Martin Becze) (@wanderer)`
 
-` * Martin Becze (@wanderer)`
+## EIP 편집자의 의무 사항
 
-## EIP Editor Responsibilities
-
-For each new EIP that comes in, an editor does the following:
+새로운 EIP가 들어올때마다 편집자는 다음과 같은 과정을 처리합니다:
 
 - Read the EIP to check if it is ready: sound and complete. The ideas must make technical sense, even if they don't seem likely to get to final status.
 - The title should accurately describe the content.
