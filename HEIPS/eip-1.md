@@ -39,7 +39,7 @@ EIP는 최소한의 기준에 부합해야 합니다. 제안의 목적이 뚜렷
 
 ## EIP 워크 플로우
 
-EIP 프로세스엔 2가지 그룹이 존재합니다. 챔피언 혹은 *EIP author*, [*EIP editor*](#eip-editors)라고 불리는 여러분과 [*Ethereum Core Developers*](https://github.com/ethereum/pm)입니다.
+EIP 프로세스엔 2가지 그룹이 존재합니다. 챔피언 혹은 *EIP author*라고 불리는 여러분과 [*EIP editor*](#eip-editors), 그리고 [*Ethereum Core Developers*](https://github.com/ethereum/pm)입니다.
 
 :경고: EIP를 시작하기 전에 아이디를 먼저 점검하면 많은 시간을 절약할 수 있습니다. 여러분의 아이디어가 중복되지 않는지 확인하기 위해 이더리움 커뮤니티에 먼저 물어보세요. 아이디어가 저자 본인에게 좋아보일 순 있으나, 그것이 커뮤니티 전체에 반영될 순 없습니다. 여러분의 아이디어에 대해 토론하기 좋은 채널로는 [the Ethereum subreddit], [the Issues section of this repository], [one of the Ethereum Gitter chat rooms]가 있습니다. 특히 [the Issues section of this repository]는 여러분의 제안에 대해 커뮤니티와 논의하고 공식화된 표준으로 EIP를 시작하기에 최적의 채널입니다.
 
@@ -53,30 +53,29 @@ EIP 저자는 아래에서 설명된 스타일과 포맷을 기반으로 EIP를 
 
 * **Active** -- 일부 Informational 및 Process EIP는 목적이 구현과 완성이 아니라면 "Active"라는 상태를 부여받을 수 있습니다. 예시: EIP1
 * **Work in progress (WIP)** -- EIP 저자가 아이디어가 지지를 얻을 수 있을 지 여부에 대해 커뮤니티에 물어보았다면 [pull request]로 EIP 드래프트를 작성할 수 있습니다. 어느 정도 구현이 된 경우 커뮤니티가 해당 EIP를 공부하는데 도움을 줄 수 있습니다.
-  * :다음 단계: 드래프트 -- 제안된 EIP가 이 단계에서 수용될 경우 EIP 편집자는 EIP 넘버를 부여하고 해당 pull request를 합병할 것입니다. EIP 편집자는 이유없이 EIP를 거부할 수 없습니다.
+  * :승인: 드래프트 -- 제안된 EIP가 이 단계에서 수용될 경우 EIP 편집자는 EIP 넘버를 부여하고 해당 pull request를 합병할 것입니다. EIP 편집자는 이유없이 EIP를 거부할 수 없습니다.
   * :거부: 드래프트 -- 드래프트 상태에서 거부되는 경우 다음과 같은 이유들이 존재합니다. 해당 제안의 목적이 뚜렷하지 않다. 너무 광범위하다. 기술적으로 오류가 존재한다. 적절한 동기부여가 없다. 이전 버전과 호환되지 않는다. [이더리움 철학](https://github.com/ethereum/wiki/wiki/White-Paper#philosophy)에 벗어난다.
 * **Draft** -- 첫 드래프트가 합병된 경우 EIP 저자는 EIP를 더욱 발전시키고 다음 단계로 넘어갈 준비가 될 시점까지 pull request를 통해 드래프트에 변경 사항들을 제출할 수 있습니다. EIP는 드래프트 단계에서 구현이 되어야한 다음 단계로 넘어갈 수 있습니다.
-  * :다음 단계: Last Call -- 제안된 EIP가 이 단계에서 수용될 경우 EIP 편집자는 Last Call 상태를 부여하고 평균 14일 정도인 리뷰 종료 날짜(`review-period-end`)를 정합니다.
+  * :승인: Last Call -- 제안된 EIP가 이 단계에서 수용될 경우 EIP 편집자는 Last Call 상태를 부여하고 평균 14일 정도인 리뷰 종료 날짜(`review-period-end`)를 정합니다.
   * :거부: Last Call -- 드래프트에 중요한 변경 사항이 예상되는 경우 Last Call로 넘어가는 요청이 거부됩니다. Rss 피드에서 불필요한 잡음을 피하기 위해 EIP가 Last Call 단계에 단 한번만 진입하길 원합니다.
 * **Last Call** -- 해당 EIP는 https://eips.ethereum.org/ 웹사이트에 등재될 것입니다. ([last-call.xml](/last-call.xml)에서 RSS를 통해 구독이 가능합니다)
+  * :승인: Accepted (코어 EIP만 해당) -- Last Call 단계에서 별다른 이슈가 없다면 Accepted 단계로 넘어갑니다.
+  * :승인: Final (코어 EIP 제외) -- Last Call 단계에서 별다른 이슈가 없다면 Final 단계로 넘어갑니다.
   * :거부: -- Last Call 단계에서 중요한 변경사항이 존재하거나 기술적으로 큰 이슈가 존재한다면 해당 EIP는 Draft 단계로 복귀됩니다.
-  * :다음 단계: Accepted (코어 EIP만 해당) -- Last Call 단계에서 별다른 이슈가 없다면 Accepted 단계로 넘어갑니다.
-  * :다음 단계: Final (코어 EIP 제외) -- Last Call 단계에서 별다른 이슈가 없다면 Final 단계로 넘어갑니다.
-* **Accepted (코어 EIP만 해당)** -- 해당 
-* **Accepted (Core EIPs only)** -- This EIP is in the hands of the Ethereum client developers.  Their process for deciding whether to encode it into their clients as part of a hard fork is not part of the EIP process.
-  * :arrow_right: Final -- Standards Track Core EIPs must be implemented in at least three viable Ethereum clients before it can be considered Final. When the implementation is complete and adopted by the community, the status will be changed to “Final”.
-* **Final** -- This EIP represents the current state-of-the-art. A Final EIP should only be updated to correct errata.
+* **Accepted (코어 EIP만 해당)** -- 해당 EIP는 이더리움 클라이언트 개발자가 관리합니다. 하드포크의 일환으로 해당 EIP를 클라이언트에 인코딩할 지 여부는 EIP 과정의 일부가 아닙니다.
+  * :승인: Final -- Standards Track Core EIP는 최소한 3곳의 이더리움 클라이언트에 반영되어야만 Final 상태로 넘어갈 수 있습니다. 구현이 완료되고 커뮤니티에 의해 채택될 경우 "Final" 상태로 변경됩니다.
+* **Final** -- 해당 EIP는 현재 최신 버전에 반영되었다는 것을 의미합니다. Final 상태의 EIP는 오류 수정일 경우에만 업데이트가 가능합니다.
 
-Other exceptional statuses include:
+일부 예외적인 상태들 역시 존재합니다.
 
-* **Deferred** -- This is for core EIPs that have been put off for a future hard fork.
-* **Rejected** -- An EIP that is fundamentally broken or a Core EIP that was rejected by the Core Devs and will not be implemented.
-* **Active** -- This is similar to Final, but denotes an EIP which may be updated without changing its EIP number.
-* **Superseded** -- An EIP which was previously final but is no longer considered state-of-the-art. Another EIP will be in Final status and reference the Superseded EIP.
+* **Deferred** -- 미래 진행될 하드 포크를 위해 연기된 코어 EIP입니다.
+* **Rejected** -- 본질적으로 완전히 어긋난 EIP 혹은 코어 개발자에 의해 거부된 코어 EIP입니다. 이는 이더리움 프로토콜에 반영되지 않습니다.
+* **Active** -- Final과 비슷하지만 EIP 넘버 변경 없이 업데이트될 수 있는 EIP를 의미합니다.
+* **Superseded** -- 이전에 Final 상태였으나 더이상 최신 버전으로 여겨지지 않는 EIP를 의미합니다. 또다른 EIP가 Final 상태로 있고 Superseded EIP를 참고할 수 있습니다.
 
-## What belongs in a successful EIP?
+## 성공적인 EIP를 작성하기 위한 방법
 
-Each EIP should have the following parts:
+EIP는 다음과 같은 사항들을 포함해야 합니다:
 
 - Preamble - RFC 822 style headers containing metadata about the EIP, including the EIP number, a short descriptive title (limited to a maximum of 44 characters), and the author details. See [below](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md#eip-header-preamble) for details.
 - Simple Summary - “If you can’t explain it simply, you don’t understand it well enough.” Provide a simplified and layman-accessible explanation of the EIP.
