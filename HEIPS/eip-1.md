@@ -1,15 +1,12 @@
 ---
-title: EIP의 목적과 가이드라인
-author: Hun Ryu <hunryu@plain.network>
-updated: 2019-04-10
-status: Draft
 eip: 1
-eip-author: Martin Becze <mb@ethereum.org>, Hudson Jameson <hudson@ethereum.org>, and others
-        https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md
-eip-status: Active
-eip-type: Meta
-eip-created: 2015-10-27
-eip-updated: 2015-12-07, 2016-02-01, 2018-03-21, 2018-05-29, 2018-10-17
+title: EIP의 목적과 가이드라인
+status: Active
+type: Meta
+author: Ludorum Jeoun <ludy@plain.network> Hun Ryu <hunryu@plain.network>
+        https://github.com/PlainNetwork/EIPs/blob/master/EIPS/eip-1.md
+created: 2019-04-02
+updated: 2019-04-02
 ---
 
 ## Handy EIP
@@ -28,10 +25,10 @@ EIP는 새로운 기능을 제안하는데 요구되는 최우선 메커니즘�
 ## EIP 타입
 
 EIP에는 3가지 타입이 존재합니다:
-
-- A **Standard Track EIP** describes any change that affects most or all Ethereum implementations, such as a change to the the network protocol, a change in block or transaction validity rules, proposed application standards/conventions, or any change or addition that affects the interoperability of applications using Ethereum. Furthermore Standard EIPs can be broken down into the following categories. Standards Track EIPs consist of three parts, a design document, implementation, and finally if warranted an update to the [formal specification].
-  - **Core** - improvements requiring a consensus fork (e.g. [EIP5], [EIP101]), as well as changes that are not necessarily consensus critical but may be relevant to [“core dev” discussions](https://github.com/ethereum/pm) (for example, [EIP90], and the miner/node strategy changes 2, 3, and 4 of [EIP86]).
-  - **Networking** - includes improvements around [devp2p] ([EIP8]) and [Light Ethereum Subprotocol], as well as proposed improvements to network protocol specifications of [whisper] and [swarm].
+- **Standard Track EIP** 네트워크 프로토콜, 블록 혹은 거래 증명 방식에 대한 개선 사항, 어플리케이션 규격, 이더리움 기반의 어플리케이션에 대한 상호 운용성 등 이더리움에 전체적으로 영향을 끼치는 모든 개선 사항을 포함합니다. Standard EIP는 아래와 같은 카테고리로 나눠질 수 있습니다. Standard Track EIP는 설계 문서를 작성 후 구현 검증이 끝난 후 이더리움 황서에 업데이트됩니다.
+  - **Core** - [EIP5], [EIP101]과 같은 컨센서스 포크를 요구하는 개선 사항 혹은 컨센서스와 크게 상관이 없더라도 [“코어 개발자” 논의 사항](https://github.com/ethereum/pm)과 관련된 사안들이 포함됩니다. [EIP90]을 비롯하여 채굴자/노드 전략 변경 내용이 포함된 [EIP86]의 2, 3, 4번이 그 예시입니다.
+  - **Networking** - [devp2p]([EIP8]) 및 [Light Ethereum Subprotocol]을 포함하여 [Whisper]과 [Swarm]과 같은 네트워크 프로토콜 스펙에 대한 개선 제안도 포함됩니다.
+  - **Interface** - 
   - **Interface** - includes improvements around client [API/RPC] specifications and standards, and also certain language-level standards like method names ([EIP6]) and [contract ABIs]. The label “interface” aligns with the [interfaces repo] and discussion should primarily occur in that repository before an EIP is submitted to the EIPs repository.
   - **ERC** - application-level standards and conventions, including contract standards such as token standards ([ERC20]), name registries ([ERC26], [ERC137]), URI schemes ([ERC67]), library/package formats ([EIP82]), and wallet formats ([EIP75], [EIP85]).
 - An **Informational EIP** describes an Ethereum design issue, or provides general guidelines or information to the Ethereum community, but does not propose a new feature. Informational EIPs do not necessarily represent Ethereum community consensus or a recommendation, so users and implementers are free to ignore Informational EIPs or follow their advice.
