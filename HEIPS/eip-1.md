@@ -49,9 +49,10 @@ EIP 저자는 아래에서 설명된 스타일과 포맷을 기반으로 EIP를 
 [ WIP ] -> [ DRAFT ] -> [ LAST CALL ] -> [ ACCEPTED ] -> [ FINAL ]
 ```
 
-Each status change is requested by the EIP author and reviewed by the EIP editors. Use a pull request to update the status. Please include a link to where people should continue discussing your EIP. The EIP editors will process these requests as per the conditions below.
+위에서 명시된 각 상태에 대한 변경은 EIP 저자에 의해 요청되며 EIP 편집자에 의해 리뷰됩니다. 상태 변경은 pull request를 사용해야 합니다. 여러분의 EIP에 대한 논의를 이어갈 수 있는 링크를 포함해야 합니다. EIP 편집자는 아래 설명된 조건에 따라 해당 요청들을 처리해야 합니다.
 
-* **Active** -- Some Informational and Process EIPs may also have a status of “Active” if they are never meant to be completed. E.g. EIP 1 (this EIP).
+* **Active** -- 일부 Informational 및 Process EIP는 목적이 구현과 완성이 아니라면 "Active"라는 상태를 부여받을 수 있습니다. 예시: ([EIP1])
+* **Work in progress (WIP)** -- 
 * **Work in progress (WIP)** -- Once the champion has asked the Ethereum community whether an idea has any chance of support, they will write a draft EIP as a [pull request]. Consider including an implementation if this will aid people in studying the EIP.
   * :arrow_right: Draft -- If agreeable, EIP editor will assign the EIP a number (generally the issue or PR number related to the EIP) and merge your pull request. The EIP editor will not unreasonably deny an EIP.
   * :x: Draft -- Reasons for denying draft status include being too unfocused, too broad, duplication of effort, being technically unsound, not providing proper motivation or addressing backwards compatibility, or not in keeping with the [Ethereum philosophy](https://github.com/ethereum/wiki/wiki/White-Paper#philosophy).
