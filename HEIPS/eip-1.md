@@ -51,18 +51,18 @@ EIP 저자는 아래에서 설명된 스타일과 포맷을 기반으로 EIP를 
 
 위에서 명시된 각 상태에 대한 변경은 EIP 저자에 의해 요청되며 EIP 편집자에 의해 리뷰됩니다. 상태 변경은 pull request를 사용해야 합니다. 여러분의 EIP에 대한 논의를 이어갈 수 있는 링크를 포함해야 합니다. EIP 편집자는 아래 설명된 조건에 따라 해당 요청들을 처리해야 합니다.
 
-* **Active** -- 일부 Informational 및 Process EIP는 목적이 구현과 완성이 아니라면 "Active"라는 상태를 부여받을 수 있습니다. 예시: ([EIP1])
-* **Work in progress (WIP)** -- 
-* **Work in progress (WIP)** -- Once the champion has asked the Ethereum community whether an idea has any chance of support, they will write a draft EIP as a [pull request]. Consider including an implementation if this will aid people in studying the EIP.
-  * :arrow_right: Draft -- If agreeable, EIP editor will assign the EIP a number (generally the issue or PR number related to the EIP) and merge your pull request. The EIP editor will not unreasonably deny an EIP.
-  * :x: Draft -- Reasons for denying draft status include being too unfocused, too broad, duplication of effort, being technically unsound, not providing proper motivation or addressing backwards compatibility, or not in keeping with the [Ethereum philosophy](https://github.com/ethereum/wiki/wiki/White-Paper#philosophy).
-* **Draft** -- Once the first draft has been merged, you may submit follow-up pull requests with further changes to your draft until such point as you believe the EIP to be mature and ready to proceed to the next status. An EIP in draft status must be implemented to be considered for promotion to the next status (ignore this requirement for core EIPs).
-  * :arrow_right: Last Call -- If agreeable, the EIP editor will assign Last Call status and set a review end date (`review-period-end`), normally 14 days later.
-  * :x: Last Call -- A request for Last Call status will be denied if material changes are still expected to be made to the draft. We hope that EIPs only enter Last Call once, so as to avoid unnecessary noise on the RSS feed.
-* **Last Call** -- This EIP will listed prominently on the https://eips.ethereum.org/ website (subscribe via RSS at [last-call.xml](/last-call.xml)).
-  * :x: -- A Last Call which results in material changes or substantial unaddressed technical complaints will cause the EIP to revert to Draft.
-  * :arrow_right: Accepted (Core EIPs only) -- A successful Last Call without material changes or unaddressed technical complaints will become Accepted.
-  * :arrow_right: Final (Not core EIPs) -- A successful Last Call without material changes or unaddressed technical complaints will become Final.
+* **Active** -- 일부 Informational 및 Process EIP는 목적이 구현과 완성이 아니라면 "Active"라는 상태를 부여받을 수 있습니다. 예시: EIP1
+* **Work in progress (WIP)** -- EIP 저자가 아이디어가 지지를 얻을 수 있을 지 여부에 대해 커뮤니티에 물어보았다면 [pull request]로 EIP 드래프트를 작성할 수 있습니다. 어느 정도 구현이 된 경우 커뮤니티가 해당 EIP를 공부하는데 도움을 줄 수 있습니다.
+  * :다음 단계: 드래프트 -- 제안된 EIP가 이 단계에서 수용될 경우 EIP 편집자는 EIP 넘버를 부여하고 해당 pull request를 합병할 것입니다. EIP 편집자는 이유없이 EIP를 거부할 수 없습니다.
+  * :거부: 드래프트 -- 드래프트 상태에서 거부되는 경우 다음과 같은 이유들이 존재합니다. 해당 제안의 목적이 뚜렷하지 않다. 너무 광범위하다. 기술적으로 오류가 존재한다. 적절한 동기부여가 없다. 이전 버전과 호환되지 않는다. [이더리움 철학](https://github.com/ethereum/wiki/wiki/White-Paper#philosophy)에 벗어난다.
+* **Draft** -- 첫 드래프트가 합병된 경우 EIP 저자는 EIP를 더욱 발전시키고 다음 단계로 넘어갈 준비가 될 시점까지 pull request를 통해 드래프트에 변경 사항들을 제출할 수 있습니다. EIP는 드래프트 단계에서 구현이 되어야한 다음 단계로 넘어갈 수 있습니다.
+  * :다음 단계: Last Call -- 제안된 EIP가 이 단계에서 수용될 경우 EIP 편집자는 Last Call 상태를 부여하고 평균 14일 정도인 리뷰 종료 날짜(`review-period-end`)를 정합니다.
+  * :거부: Last Call -- 드래프트에 중요한 변경 사항이 예상되는 경우 Last Call로 넘어가는 요청이 거부됩니다. Rss 피드에서 불필요한 잡음을 피하기 위해 EIP가 Last Call 단계에 단 한번만 진입하길 원합니다.
+* **Last Call** -- 해당 EIP는 https://eips.ethereum.org/ 웹사이트에 등재될 것입니다. ([last-call.xml](/last-call.xml)에서 RSS를 통해 구독이 가능합니다)
+  * :거부: -- Last Call 단계에서 중요한 변경사항이 존재하거나 기술적으로 큰 이슈가 존재한다면 해당 EIP는 Draft 단계로 복귀됩니다.
+  * :다음 단계: Accepted (코어 EIP만 해당) -- Last Call 단계에서 별다른 이슈가 없다면 Accepted 단계로 넘어갑니다.
+  * :다음 단계: Final (코어 EIP 제외) -- Last Call 단계에서 별다른 이슈가 없다면 Final 단계로 넘어갑니다.
+* **Accepted (코어 EIP만 해당)** -- 해당 
 * **Accepted (Core EIPs only)** -- This EIP is in the hands of the Ethereum client developers.  Their process for deciding whether to encode it into their clients as part of a hard fork is not part of the EIP process.
   * :arrow_right: Final -- Standards Track Core EIPs must be implemented in at least three viable Ethereum clients before it can be considered Final. When the implementation is complete and adopted by the community, the status will be changed to “Final”.
 * **Final** -- This EIP represents the current state-of-the-art. A Final EIP should only be updated to correct errata.
