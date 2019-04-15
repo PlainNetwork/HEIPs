@@ -17,6 +17,22 @@ updated: 2019-04-16
 ## EIP가 무엇인가?
 비트코인에 BIP가 있듯 이더리움에도 EIP가 있습니다. EIP는 Ethereum Improvement Proposal의 약자로서 이더리움 개선 제안을 뜻합니다. 말그대로 EIP는 이더리움 커뮤니티에 정보를 제공하거나 이더리움의 새로운 기능을 소개하는 설계 문서와 같습니다. EIP는 제안하고자 하는 기능과 이유에 대해 기술적으로 명확히 설명해야 합니다. EIP 작성자는 제안한 EIP에 대해 커뮤니티의 합의를 이끌어내야 하며, 반대의견에 대해 기록해야할 의무가 있습니다. 제 아무리 비탈릭이라 하더라도 EIP를 그냥 통과시킬 순 없습니다. 실제로 비탈릭이 제안한 몇몇 EIP 역시 수 많은 토론을 통해 적용된 바 있습니다.
 
+## 역사
+
+EIP 1 문서는 아미르 타키(Amir Taaki)가 작성한 [Bitcoin's BIP-0001]로부터 파생되었습니다. [Bitcoin's BIP-0001]은 [Python's PEP-0001]로부터 파생된 바 있습니다. EIP 1는 복사되었거나 수정된 것이 대부분입니다. PEP-0001는 EIP와 관련없는 복수의 개발자들에 의해 작성되었습니다. EIP와 관련된 제안 사항들은 모두 EIP 편집자들에게 전달해야 합니다.
+
+2015년 12월 7일: EIP 1이 개선되었으며 pull request로 지정되었습니다.
+
+2016년 2월 1일: EIP 1에 편집자들이 추가되었고, 과정에 대한 개선 사항 초안이 생성되었으며 Master 스트림에 병합되었습니다.
+
+2018년 5월 21일: [eips.ethereum.org](https://eips.ethereum.org/)에 적용된 새로운 자동 생성 EIP 디렉터리를 반영한 마이너한 수정이 있었습니다.
+
+2018년 5월 29일: Last Call 과정이 추가되었습니다.
+
+2018년 10월 17일: `updated` 헤더가 도입되었습니다.
+
+EIP 1에 대한 변경 사항들은 다음 링크에서 확인할 수 있으며 [변경 사항 히스토리](https://github.com/ethereum/EIPs/commits/master/EIPS/eip-1.md), 또는 해당 EIP의 상단 오른쪽에 위치한 History 버튼을 클릭하여 확인 가능합니다.
+
 ## EIP 시스템을 왜 사용하는가?
 EIP는 새로운 기능을 제안하는데 요구되는 최우선 메커니즘으로 활용되고, 이슈에 대한 커뮤니티의 기술적 조언을 모우고, 이더리움에 적용되는 설계적 결정들을 문서화하기 위함입니다. EIP는 versioned repository(각 업데이트마다 변경된 히스토리를 저장하는 리포지토리)에 텍스트 파일로 유지될 것이기 때문에  EIP의 변경 사항은 문서화되어 모두 기록으로 남아있습니다.
 
@@ -53,9 +69,9 @@ EIP 저자는 아래에서 설명된 스타일과 포맷을 기반으로 EIP를 
 
 * **Active** -- 일부 Informational 및 Process EIP는 목적이 구현과 완성이 아니라면 "Active"라는 상태를 부여받을 수 있습니다. 예시: EIP1
 * **Work in progress (WIP)** -- EIP 저자가 아이디어가 지지를 얻을 수 있을 지 여부에 대해 커뮤니티에 물어보았다면 [pull request]로 EIP 드래프트를 작성할 수 있습니다. 어느 정도 구현이 된 경우 커뮤니티가 해당 EIP를 공부하는데 도움을 줄 수 있습니다.
-  * :승인: 드래프트 -- 제안된 EIP가 이 단계에서 수용될 경우 EIP 편집자는 EIP 넘버를 부여하고 해당 pull request를 합병할 것입니다. EIP 편집자는 이유없이 EIP를 거부할 수 없습니다.
+  * :승인: 드래프트 -- 제안된 EIP가 이 단계에서 수용될 경우 EIP 편집자는 EIP 넘버를 부여하고 해당 pull request를 병합할 것입니다. EIP 편집자는 이유없이 EIP를 거부할 수 없습니다.
   * :거부: 드래프트 -- 드래프트 상태에서 거부되는 경우 다음과 같은 이유들이 존재합니다. 해당 제안의 목적이 뚜렷하지 않다. 너무 광범위하다. 기술적으로 오류가 존재한다. 적절한 동기부여가 없다. 이전 버전과 호환되지 않는다. [이더리움 철학](https://github.com/ethereum/wiki/wiki/White-Paper#philosophy)에 벗어난다.
-* **Draft** -- 첫 드래프트가 합병된 경우 EIP 저자는 EIP를 더욱 발전시키고 다음 단계로 넘어갈 준비가 될 시점까지 pull request를 통해 드래프트에 변경 사항들을 제출할 수 있습니다. EIP는 드래프트 단계에서 구현이 되어야한 다음 단계로 넘어갈 수 있습니다.
+* **Draft** -- 첫 드래프트가 병합된 경우 EIP 저자는 EIP를 더욱 발전시키고 다음 단계로 넘어갈 준비가 될 시점까지 pull request를 통해 드래프트에 변경 사항들을 제출할 수 있습니다. EIP는 드래프트 단계에서 구현이 되어야한 다음 단계로 넘어갈 수 있습니다.
   * :승인: Last Call -- 제안된 EIP가 이 단계에서 수용될 경우 EIP 편집자는 Last Call 상태를 부여하고 평균 14일 정도인 리뷰 종료 날짜(`review-period-end`)를 정합니다.
   * :거부: Last Call -- 드래프트에 중요한 변경 사항이 예상되는 경우 Last Call로 넘어가는 요청이 거부됩니다. Rss 피드에서 불필요한 잡음을 피하기 위해 EIP가 Last Call 단계에 단 한번만 진입하길 원합니다.
 * **Last Call** -- 해당 EIP는 https://eips.ethereum.org/ 웹사이트에 등재될 것입니다. ([last-call.xml](/last-call.xml)에서 RSS를 통해 구독이 가능합니다)
@@ -210,41 +226,25 @@ EIP는 다이어그램과 같은 보조 파일을 포함할 수 있씁니다. �
 
 새로운 EIP가 들어올때마다 편집자는 다음과 같은 과정을 처리합니다:
 
-- Read the EIP to check if it is ready: sound and complete. The ideas must make technical sense, even if they don't seem likely to get to final status.
-- The title should accurately describe the content.
-- Check the EIP for language (spelling, grammar, sentence structure, etc.), markup (Github flavored Markdown), code style
+- 해당 EIP가 준비되었는지 체크하기 위해 정독합니다. 아이디어가 Final 상태까지 이르지 못할 것 같아 보이더라도 기술적으로 편집자를 이해시킬 수 있어야 합니다.
+- 타이틀이 내용을 정확히 설명해야 합니다.
+- 스펠링, 문법, 문장 구조 등 기본적인 언어, 깃헙 스타일의 마크다운 형식, 그리고 코드 스타일을 체크해야 합니다.
 
-If the EIP isn't ready, the editor will send it back to the author for revision, with specific instructions.
+만약 EIP가 충분히 준비되지 않은 경우 편집자는 자세한 설명이 포함된 수정 사항을 저자에게 제공할 것입니다.
 
-Once the EIP is ready for the repository, the EIP editor will:
+EIP가 리포지터리에 올라갈 준비가 된 경우 편집자는 다음과 같은 과정을 처리합니다:
 
-- Assign an EIP number (generally the PR number or, if preferred by the author, the Issue # if there was discussion in the Issues section of this repository about this EIP)
+- EIP 넘버를 부여합니다. 보통 pull request 넘버로 부여되며, 저자가 원할 경우에는 해당 EIP에 대한 논의가 이뤄진 Issue 넘버로 부여될 수 있습니다.
 
-- Merge the corresponding pull request
+- 관련 pull request를 병합합니다.
 
-- Send a message back to the EIP author with the next step.
+- 다음 과정을 설명하는 메시지를 EIP 저자에게 전달합니다.
 
-Many EIPs are written and maintained by developers with write access to the Ethereum codebase. The EIP editors monitor EIP changes, and correct any structure, grammar, spelling, or markup mistakes we see.
+수 많은 EIP는 이더리움 코드베이스에 작성 권한을 보유한 개발자들에 의해 작성되며 유지되고 있습니다. EIP 편집자들은 EIP 수정 사항을 모니터링하고, 구조, 문법, 스펠링, 마크업 이슈들을 정리합니다.
 
-The editors don't pass judgment on EIPs. We merely do the administrative & editorial part.
+편집자들은 EIP에 대한 재단을 내리지 않습니다. 편집자들은 그저 행정 및 편집과 관련된 부분을 수행할 뿐입니다.
 
-## History
-
-This document was derived heavily from [Bitcoin's BIP-0001] written by Amir Taaki which in turn was derived from [Python's PEP-0001]. In many places text was simply copied and modified. Although the PEP-0001 text was written by Barry Warsaw, Jeremy Hylton, and David Goodger, they are not responsible for its use in the Ethereum Improvement Process, and should not be bothered with technical questions specific to Ethereum or the EIP. Please direct all comments to the EIP editors.
-
-December 7, 2015: EIP 1 has been improved and will be placed as a PR.
-
-February 1, 2016: EIP 1 has added editors, made draft improvements to process, and has merged with Master stream.
-
-March 21, 2018: Minor edits to accommodate the new automatically-generated EIP directory on [eips.ethereum.org](https://eips.ethereum.org/).
-
-May 29, 2018: A last call process was added.
-
-Oct 17, 2018: The `updated` header was introduced.
-
-See [the revision history for further details](https://github.com/ethereum/EIPs/commits/master/EIPS/eip-1.md), which is also available by clicking on the History button in the top right of the EIP.
-
-### Bibliography
+### 참고 문헌
 
 [EIP5]: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-5.md
 [EIP101]: https://github.com/ethereum/EIPs/issues/28
@@ -275,6 +275,6 @@ See [the revision history for further details](https://github.com/ethereum/EIPs/
 [Bitcoin's BIP-0001]: https://github.com/bitcoin/bips
 [Python's PEP-0001]: https://www.python.org/dev/peps/
 
-## Copyright
+## 저작권
 
-Copyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
+저작권과 그와 관련된 권리는 [CC0](https://creativecommons.org/publicdomain/zero/1.0/)를 통해 면제됩니다.
