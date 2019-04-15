@@ -33,13 +33,13 @@ EIP에는 3가지 타입이 존재합니다:
 - **Informational EIP**는 이더리움의 디자인 이슈 혹은 이더리움의 보편적인 가이드라인 및 설명에 대한 제안이며, 새로운 기능은 제안하지 않습니다. Informational EIP는 이더리움 커뮤니티의 합의된 사항이라던지 권고사항이 아니며, 사용자와 개발자는 사실상 이를 무시해도 무관합니다.
 - **Meta EIP**는 이더리움 프로세스 혹은 해당 프로세스에 대한 변경 사항을 제안합니다. 모든 Meta EIP는 Process EIP입니다. Process EIP는 Standards Track EIP와 비슷하지만 이더리움 프로토콜 이외의 분야에 적용됩니다. 이더리움 발전에 반영되는 안을 제안할 수 있으나 이더리움의 코드에는 반영되지 않습니다. 또한, 커뮤니티의 합의를 도모해야할 수 있습니다. Informational EIP와는 다르게 이는 권고 사항이며, 사용자들은 이를 무시할 수 없습니다. 프로세스 관련 사항, 가이드라인, 의사 결정 과정에 대한 변경 사항, 그리고 이더리움 개발 도구들에 대한 변경 사항도 이에 포함됩니다.
 
-It is highly recommended that a single EIP contain a single key proposal or new idea. The more focused the EIP, the more successful it tends to be. A change to one client doesn't require an EIP; a change that affects multiple clients, or defines a standard for multiple apps to use, does.
+하나의 EIP에 하나의 중요한 제안 혹은 아이디어만 포함되는 것을 권장합니다. EIP가 하나의 아이디어에 집중되어야 성공할 확률이 높기 때문입니다. 하나의 클라이언트에 대한 변경 사항에 EIP가 요구되지 않지만, 다수의 클라이언트 혹은 다수의 어플리케이션을 위한 표준에 대한 변경 사항에는 EIP가 요구됩니다.
 
-An EIP must meet certain minimum criteria. It must be a clear and complete description of the proposed enhancement. The enhancement must represent a net improvement. The proposed implementation, if applicable, must be solid and must not complicate the protocol unduly.
+EIP는 최소한의 기준에 부합해야 합니다. 제안의 목적이 뚜렷해야하며 개선 사항에 대한 완벽한 설명이 포함되어야 합니다. 또한, 제안은 프로토콜을 지나치게 혼선시켜서는 안됩니다.
 
-## EIP Work Flow
+## EIP 워크 플로우
 
-Parties involved in the process are you, the champion or *EIP author*, the [*EIP editors*](#eip-editors), and the [*Ethereum Core Developers*](https://github.com/ethereum/pm).
+EIP 프로세스엔 2가지 그룹이 존재합니다. 여러분, 즉 챔피언 혹은 *EIP author*, [*EIP editor*](#eip-editors)와 [*Ethereum Core Developers*](https://github.com/ethereum/pm)입니다.
 
 :warning: Before you begin, vet your idea, this will save you time. Ask the Ethereum community first if an idea is original to avoid wasting time on something that will be be rejected based on prior research (searching the Internet does not always do the trick). It also helps to make sure the idea is applicable to the entire community and not just the author. Just because an idea sounds good to the author does not mean it will work for most people in most areas where Ethereum is used. Examples of appropriate public forums to gauge interest around your EIP include [the Ethereum subreddit], [the Issues section of this repository], and [one of the Ethereum Gitter chat rooms]. In particular, [the Issues section of this repository] is an excellent place to discuss your proposal with the community and start creating more formalized language around your EIP.
 
