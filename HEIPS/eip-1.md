@@ -31,7 +31,7 @@ EIP 1 문서는 아미르 타키(Amir Taaki)가 작성한 [Bitcoin's BIP-0001]�
 
 2018년 10월 17일: `updated` 헤더가 도입되었습니다.
 
-EIP 1에 대한 변경 사항들은 다음 링크에서 확인할 수 있으며 [변경 사항 히스토리](https://github.com/ethereum/EIPs/commits/master/EIPS/eip-1.md), 또는 해당 EIP의 상단 오른쪽에 위치한 History 버튼을 클릭하여 확인 가능합니다.
+EIP 1에 대한 변경 사항들은 [여기](https://github.com/ethereum/EIPs/commits/master/EIPS/eip-1.md)에서 확인할 수 있으며, 또는 해당 EIP의 상단 오른쪽에 위치한 History 버튼을 클릭하여 확인 가능합니다.
 
 ## EIP 시스템을 왜 사용하는가?
 EIP는 새로운 기능을 제안하는데 요구되는 최우선 메커니즘으로 활용되고, 이슈에 대한 커뮤니티의 기술적 조언을 모우고, 이더리움에 적용되는 설계적 결정들을 문서화하기 위함입니다. EIP는 versioned repository(각 업데이트마다 변경된 히스토리를 저장하는 리포지토리)에 텍스트 파일로 유지될 것이기 때문에  EIP의 변경 사항은 문서화되어 모두 기록으로 남아있습니다.
@@ -278,3 +278,6 @@ EIP가 리포지터리에 올라갈 준비가 된 경우 편집자는 다음과 
 ## 저작권
 
 저작권과 그와 관련된 권리는 [CC0](https://creativecommons.org/publicdomain/zero/1.0/)를 통해 면제됩니다.
+
+## Handy EIP 저작권
+CC-BY-SA
