@@ -6,7 +6,7 @@ type: Meta
 author: Ludorum Jeoun <ludy@plain.network> Hun Ryu <hunryu@plain.network>
         https://github.com/PlainNetwork/EIPs/blob/master/EIPS/eip-1.md
 created: 2019-04-02
-updated: 2019-04-02
+updated: 2019-04-16
 ---
 
 ## Handy EIP
@@ -77,13 +77,14 @@ EIP 저자는 아래에서 설명된 스타일과 포맷을 기반으로 EIP를 
 
 EIP는 다음과 같은 사항들을 포함해야 합니다:
 
-- Preamble - RFC 822 style headers containing metadata about the EIP, including the EIP number, a short descriptive title (limited to a maximum of 44 characters), and the author details. See [below](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md#eip-header-preamble) for details.
-- Simple Summary - “If you can’t explain it simply, you don’t understand it well enough.” Provide a simplified and layman-accessible explanation of the EIP.
-- Abstract - a short (~200 word) description of the technical issue being addressed.
-- Motivation (*optional) - The motivation is critical for EIPs that want to change the Ethereum protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the EIP solves. EIP submissions without sufficient motivation may be rejected outright.
-- Specification - The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations for any of the current Ethereum platforms (cpp-ethereum, go-ethereum, parity, ethereumJ, ethereumjs-lib, [and others](https://github.com/ethereum/wiki/wiki/Clients).
-- Rationale - The rationale fleshes out the specification by describing what motivated the design and why particular design decisions were made. It should describe alternate designs that were considered and related work, e.g. how the feature is supported in other languages. The rationale may also provide evidence of consensus within the community, and should discuss important objections or concerns raised during discussion.
-- Backwards Compatibility - All EIPs that introduce backwards incompatibilities must include a section describing these incompatibilities and their severity. The EIP must explain how the author proposes to deal with these incompatibilities. EIP submissions without a sufficient backwards compatibility treatise may be rejected outright.
+- 서론(Preamble) - EIP 넘버, 간략한 설명을 해주는 타이틀(44글자 제한)과 같이 해당 EIP에 대한 메타데이터가 명시된 RFC 822 스타일의 헤더를 포함합니다. [여기](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md#eip-header-preamble)를 클릭하면 이에 대한 자세한 정보를 보실 수 있습니다.
+- 개요(Simple Summary) - "간단히 설명할 수 없다면 충분히 이해하고 있는 것이 아니다." 해당 EIP에 대해 비전문가 역시 이해할 수 있을 정도의 간소화된 설명을 포함해야 합니다. 
+- 추상적 개념(Abstract) - 200단어 이내로 기술적 이슈를 설명해야 합니다.
+- 동기(Motivation) (*선택적) - 특히 이더리움 프로토콜을 변경하고자 하는 EIP에 동기는 매우 중요합니다. 기존 프로토콜 스펙이 왜 적절하지 않은 지에 대해 명백히 설명해야 합니다. 충분하지 않은 동기 없이 제출되는 EIP는 거부될 수 있습니다.
+- 스펙(Specification) - 새로운 기능에 대한 컴퓨터 공학적인 문법과 의미를 설명하는 기술적 스펙을 포함해야 합니다. 해당 스펙은 기존의 이더리움 플랫폼(cpp-ethereum, go-ethereum, parity, ethereumJ, ethereumjs-lib, 및 [기타](https://github.com/ethereum/wiki/wiki/Clients))과 상호 운용될 수 있는 지에 대해 논의될 수 있을 만큼 자세해야 합니다.
+- 근거(Rationale) - 근거는 해당 설계의 동기에 대해 설명하고 왜 이러한 설계가 결정되었는 지에 대해 서술하며 이전 스펙 과정을 구체화합니다. 이 단계에서는 그동안 고려되었던 대안과 관련 작업들을 설명해야 합니다. 해당 기능이 여타 프로그래밍 언어로 어떻게 지원되는 지에 대한 설명도 이에 포함됩니다. 또한, 커뮤니티의 합의에 대한 증거를 제시해야 하고 이전에 논의되었던 중요한 이의 사안들에 대해 논하여야 합니다.
+- 호환성(Backwards Compatibility) - 호환성이 불가능한 점을 나타낸 모든 EIP는 비호환성 및 이에 대한 심각성을 서술하는 란을 반드시 포함해야 합니다. 해당 EIP는 이러한 비호환성을 어떠한 방식으로 해결할 지에 대해 반드시 설명해야합니다. 비호환성에 대해 충분히 다뤄지지 않은 EIP는 거부될 수 있습니다.
+- 시험 사례(Test Cases) - 
 - Test Cases - Test cases for an implementation are mandatory for EIPs that are affecting consensus changes. Other EIPs can choose to include links to test cases if applicable.
 - Implementations - The implementations must be completed before any EIP is given status “Final”, but it need not be completed before the EIP is merged as draft. While there is merit to the approach of reaching consensus on the specification and rationale before writing code, the principle of “rough consensus and running code” is still useful when it comes to resolving many discussions of API details.
 - Copyright Waiver - All EIPs must be in the public domain. See the bottom of this EIP for an example copyright waiver.
