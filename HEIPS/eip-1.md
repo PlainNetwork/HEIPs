@@ -73,7 +73,7 @@ EIP 저자는 아래에서 설명된 스타일과 포맷을 기반으로 EIP를 
   * :거부: 드래프트 -- 드래프트 상태에서 거부되는 경우 다음과 같은 이유들이 존재합니다. 해당 제안의 목적이 뚜렷하지 않다. 너무 광범위하다. 기술적으로 오류가 존재한다. 적절한 동기부여가 없다. 이전 버전과 호환되지 않는다. [이더리움 철학](https://github.com/ethereum/wiki/wiki/White-Paper#philosophy)에 벗어난다.
 * **Draft** -- 첫 드래프트가 병합된 경우 EIP 저자는 EIP를 더욱 발전시키고 다음 단계로 넘어갈 준비가 될 시점까지 pull request를 통해 드래프트에 변경 사항들을 제출할 수 있습니다. EIP는 드래프트 단계에서 구현이 되어야한 다음 단계로 넘어갈 수 있습니다.
   * :승인: Last Call -- 제안된 EIP가 이 단계에서 수용될 경우 EIP 편집자는 Last Call 상태를 부여하고 평균 14일 정도인 리뷰 종료 날짜(`review-period-end`)를 정합니다.
-  * :거부: Last Call -- 드래프트에 중요한 변경 사항이 예상되는 경우 Last Call로 넘어가는 요청이 거부됩니다. Rss 피드에서 불필요한 잡음을 피하기 위해 EIP가 Last Call 단계에 단 한번만 진입하길 원합니다.
+  * :거부: Last Call -- 드래프트에 중요한 변경 사항이 예상되는 경우 Last Call로 넘어가는 요청이 거부됩니다. RSS 피드에서 불필요한 잡음을 피하기 위해 EIP가 Last Call 단계에 단 한번만 진입하길 원합니다.
 * **Last Call** -- 해당 EIP는 https://eips.ethereum.org/ 웹사이트에 등재될 것입니다. ([last-call.xml](/last-call.xml)에서 RSS를 통해 구독이 가능합니다)
   * :승인: Accepted (코어 EIP만 해당) -- Last Call 단계에서 별다른 이슈가 없다면 Accepted 단계로 넘어갑니다.
   * :승인: Final (코어 EIP 제외) -- Last Call 단계에서 별다른 이슈가 없다면 Final 단계로 넘어갑니다.
