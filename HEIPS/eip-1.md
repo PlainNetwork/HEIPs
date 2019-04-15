@@ -244,8 +244,6 @@ EIP가 리포지터리에 올라갈 준비가 된 경우 편집자는 다음과 
 
 편집자들은 EIP에 대한 재단을 내리지 않습니다. 편집자들은 그저 행정 및 편집과 관련된 부분을 수행할 뿐입니다.
 
-### 참고 문헌
-
 [EIP5]: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-5.md
 [EIP101]: https://github.com/ethereum/EIPs/issues/28
 [EIP90]: https://github.com/ethereum/EIPs/issues/90
@@ -275,7 +273,7 @@ EIP가 리포지터리에 올라갈 준비가 된 경우 편집자는 다음과 
 [Bitcoin's BIP-0001]: https://github.com/bitcoin/bips
 [Python's PEP-0001]: https://www.python.org/dev/peps/
 
-## 저작권
+## EIP 저작권
 
 저작권과 그와 관련된 권리는 [CC0](https://creativecommons.org/publicdomain/zero/1.0/)를 통해 면제됩니다.
 
