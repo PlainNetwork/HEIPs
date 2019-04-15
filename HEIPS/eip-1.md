@@ -39,11 +39,11 @@ EIP는 최소한의 기준에 부합해야 합니다. 제안의 목적이 뚜렷
 
 ## EIP 워크 플로우
 
-EIP 프로세스엔 2가지 그룹이 존재합니다. 여러분, 즉 챔피언 혹은 *EIP author*, [*EIP editor*](#eip-editors)와 [*Ethereum Core Developers*](https://github.com/ethereum/pm)입니다.
+EIP 프로세스엔 2가지 그룹이 존재합니다. 챔피언 혹은 *EIP author*, [*EIP editor*](#eip-editors)라고 불리는 여러분과 [*Ethereum Core Developers*](https://github.com/ethereum/pm)입니다.
 
-:warning: Before you begin, vet your idea, this will save you time. Ask the Ethereum community first if an idea is original to avoid wasting time on something that will be be rejected based on prior research (searching the Internet does not always do the trick). It also helps to make sure the idea is applicable to the entire community and not just the author. Just because an idea sounds good to the author does not mean it will work for most people in most areas where Ethereum is used. Examples of appropriate public forums to gauge interest around your EIP include [the Ethereum subreddit], [the Issues section of this repository], and [one of the Ethereum Gitter chat rooms]. In particular, [the Issues section of this repository] is an excellent place to discuss your proposal with the community and start creating more formalized language around your EIP.
+:경고: EIP를 시작하기 전에 아이디를 먼저 점검하면 많은 시간을 절약할 수 있습니다. 여러분의 아이디어가 중복되지 않는지 확인하기 위해 이더리움 커뮤니티에 먼저 물어보세요. 아이디어가 저자 본인에게 좋아보일 순 있으나, 그것이 커뮤니티 전체에 반영될 순 없습니다. 여러분의 아이디어에 대해 토론하기 좋은 채널로는 [the Ethereum subreddit], [the Issues section of this repository], [one of the Ethereum Gitter chat rooms]가 있습니다. 특히 [the Issues section of this repository]는 여러분의 제안에 대해 커뮤니티와 논의하고 공식화된 표준으로 EIP를 시작하기에 최적의 채널입니다.
 
-Your role as the champion is to write the EIP using the style and format described below, shepherd the discussions in the appropriate forums, and build community consensus around the idea. Following is the process that a successful EIP will move along:
+EIP 저자는 아래에서 설명된 스타일과 포맷을 기반으로 EIP를 작성해야 하고, 적절한 포럼에서 논의를 이끌어 내야하며, 해당 아이디어에 대한 커뮤니티의 합의를 도모해야 합니다. 아래 과정은 성공적인 EIP의 예시입니다:
 
 ```
 [ WIP ] -> [ DRAFT ] -> [ LAST CALL ] -> [ ACCEPTED ] -> [ FINAL ]
