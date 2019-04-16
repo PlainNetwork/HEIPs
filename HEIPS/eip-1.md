@@ -57,7 +57,7 @@ EIP는 최소한의 기준에 부합해야 한다. 제안의 목적이 뚜렷해
 
 EIP 프로세스엔 3가지 그룹이 존재한다. 챔피언 혹은 *EIP 저자*라고 불리는 당신과 [*EIP 편집자*](#eip-editors), 그리고 [*이더리움 코어 개발자들*](https://github.com/ethereum/pm)이다.
 
-:warning: EIP를 시작하기 전에 아이디를 먼저 점검하면 많은 시간을 절약할 수 있다. 당신의 아이디어가 중복되지 않는지 확인하기 위해 이더리움 커뮤니티에 먼저 물어보자. 아이디어가 저자 본인에게 좋아보일 순 있으나, 그것이 커뮤니티 전체에 반영될 순 없다. 당신의 아이디어에 대해 토론하기 좋은 채널로는 [the Ethereum subreddit], [the Issues section of this repository], [one of the Ethereum Gitter chat rooms]가 있다. 특히 [the Issues section of this repository]는 당신의 제안에 대해 커뮤니티와 논의하고 공식화된 표준으로 EIP를 시작하기에 최적의 채널이다.
+:warning: EIP를 시작하기 전에 아이디어를 먼저 점검하면 많은 시간을 절약할 수 있다. 당신의 아이디어가 중복되지 않는지 확인하기 위해 이더리움 커뮤니티에 먼저 물어보자. 아이디어가 저자 본인에게 좋아보일 순 있으나, 그것이 커뮤니티 전체에 반영될 순 없다. 당신의 아이디어에 대해 토론하기 좋은 채널로는 [the Ethereum subreddit], [the Issues section of this repository], [one of the Ethereum Gitter chat rooms]가 있다. 특히 [the Issues section of this repository]는 당신의 제안에 대해 커뮤니티와 논의하고 공식화된 표준으로 EIP를 시작하기에 최적의 채널이다.
 
 EIP 저자는 아래에서 설명된 스타일과 포맷을 기반으로 EIP를 작성해야 하고, 적절한 포럼에서 논의를 이끌어 내야하며, 해당 아이디어에 대한 커뮤니티의 합의를 도모해야 한다. 아래 과정은 성공적인 EIP의 예시이다:
 
