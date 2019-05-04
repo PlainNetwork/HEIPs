@@ -35,7 +35,6 @@ test('0xD1220A0cf47c7B9Be7A2E6BA89F429762e7b9aDb')
 
 ```
 
-In English, convert the address to hex, but if the `i`th digit is a letter (ie. it's one of `abcdef`) print it in uppercase if the `4*i`th bit of the hash of the lowercase hexadecimal address is 1 otherwise print it in lowercase.
 이더리움 주소를 16진수(hex)로 변환하였을때(역, 일반적인 Ethereum 주소 0xa1b2...), 이더리움 주소의 'i'번째 자리수가 문자(즉, abcdef 중 한개의 문자)이면서, 그와 동시에 이더리움 주소로 생성한 해시(keccak)값에 해당하는 bit의 '4*i'번이 1인 경우 대문자로 출력한다, 이외에는 소문자로 출력한다.
 
 (역, 이더리움 주소인 "0x123456789abcdef123456789abcdef123456789a"이 있다고 할때, 해당 주소를 keccak함수에 입력값으로 사용하여 얻은 Hash 출력값은 '3ff835c0c5fb4cad9aeb19f97f9646156484b33a0ac2859df467f1b94985b84d'이다. 이더리움 주소의 11번째자리의 글자는 'b'이다. 동일한 위치의 Hash값 글자는 "f"로 bit로 변환하면 1111이다. 
@@ -43,17 +42,14 @@ In English, convert the address to hex, but if the `i`th digit is a letter (ie. 
 
 # 필요성(Rational)
 
-장점()Benefits):
-- Backwards compatible with many hex parsers that accept mixed case, allowing it to be easily introduced over time
-  많은 hex 파서들이 대소문자 혼용 주소를 받아들이는 하위 호환성을 가지고 있어, 시간이 지남에 따라 쉽게 도입될 수 있다.
-- Keeps the length at 40 characters
-  (기존 이더리움 주소 길이인, )40자 길이를 그대로 유지할 수 있다.
-- On average there will be 15 check bits per address, and the net probability that a randomly generated address if mistyped will accidentally pass a check is 0.0247%. This is a ~50x improvement over ICAP, but not as good as a 4-byte check code.
-  평균적으로 주소당 15개의 체크비트가 있고 잘못입력된 랜덤하하게 생성된 주소가 체크섬을 통과할 확률은 0.0247% 이다. 이것은 ICAP보다 최대 50배 향상된 것이지만, 4-바이트 체크 코드만큼 좋지 않다.
+장점(Benefit):
+- 많은 hex 파서들이 대소문자 혼용 주소를 받아들이는 하위 호환성을 가지고 있어, 시간이 지남에 따라 쉽게 도입될 수 있다.
+- (기존 이더리움 주소 길이인, )40자 길이를 그대로 유지할 수 있다.
+- 평균적으로 주소당 15개의 체크비트가 있고 잘못입력된 랜덤하하게 생성된 주소가 체크섬을 통과할 확률은 0.0247% 이다. 이것은 ICAP보다 최대 50배 향상된 것이지만, 4-바이트 체크 코드만큼 좋지 않다.
 
 # 구현(Implementation)
 
-In javascript:<br>자바 스크립트 예시.
+자바 스크립트 예시:
 
 ```js
 const createKeccakHash = require('keccak')
@@ -80,8 +76,7 @@ function toChecksumAddress (address) {
 '0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359'
 ```
 
-Note that the input to the Keccak256 hash is the lowercase hexadecimal string (i.e. the hex address encoded as ASCII):
-참고로 Keccak256 해시의 입력값은 모두 16진 소문자 문자열이다.(즉, ASCII로 인코딩된 16진수 주소)
+참고로 Keccak256 해시의 입력값은 모두 16진 소문자 문자열이다.(즉, ASCII로 인코딩된 16진수 주소):
 
 ```
     var hash = createKeccakHash('keccak256').update(Buffer.from(address.toLowerCase(), 'ascii')).digest()
