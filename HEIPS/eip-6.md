@@ -1,6 +1,6 @@
 ---
 eip: 6
-title: SUICIDE 명령어 변경
+title: 자살이라는 단어는 너무 가혹해!
 author: Hudson Jameson <hudson@hudsonjameson.com>
 translator: Hun Ryu <hunryu@plain.network>
 status: Final
