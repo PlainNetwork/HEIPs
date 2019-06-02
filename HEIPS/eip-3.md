@@ -8,14 +8,14 @@ category: Core
 created: 2015-11-19
 ---
 
-# Abstract
+# 초록(Abstract)
 
 This is a proposal to add a new opcode, `CALLDEPTH`. The `CALLDEPTH` opcode would return the remaining available call stack depth.
 이 제안은 `CALLDEPTH`라는 OPCODE(이하 옵코드)를 추가하기 위함이다.  이 `CALLDEPTH` 옵코드는 남아 있는 콜스택의 깊이를 반환해 준다.
 
 (역, OPCODE란, EVM 실행에 수행하는 명령어셋으로서 가상머신인 EVM내의 연산을 위해 존재한다. 예를 들어 `ADD` 옵코드는 스택에 두개의 값을 꺼내서 더한후 다시 스택에 넣는 연산을 수행한다.)
 
-# Motivation
+# 동기(Motivation)
 
 There is a limit specifying how deep contracts can call other contracts; the call stack. The limit is currently `256`. If a contract invokes another contract (either via `CALL` or `CALLCODE`), the operation will fail if the call stack depth limit has been reached.
 컨트랙트에서 다른 컨트랙트들를 호출(call)할때 얼마나 깊게(deep) 할 수 있는지 제한이 있다. 이를 '콜 스택' 이라고하며 256단계까지 제한이 있다. 어떤 컨트랙트에서 `CALL` 또는 `CALLCODE` 를 통해 다른 컨트랙트를 호출하는 동작이 '콜 스택' 깊이에 도달한 경우 실패하게 된다. 
@@ -33,6 +33,7 @@ Example(예시):
     악의적인 사용자 `X`는 
 
 It is possible to defend against this in two ways:
+아래 두가지 방법을 통해 해당 공격을 막을 수 있다.
 
 1. Check return value after invocation.
     (재귀적) 호출 이후 반환값을 확인한다. 
@@ -45,16 +46,16 @@ It is possible to defend against this in two ways:
 
 [2] https://github.com/pipermerriam/ethereum-stack-depth-lib
 
-# Specification
+# 스펙(Specification)
 
 The opcode `CALLDEPTH` should return the remaining call stack depth. A value of `0` means that the call stack is exhausted, and no further calls can be made.
 `CALLDEPTH` 옵코드는 남아 있는 스택 깊이를 반환한다. 이 반환값이 `0` 인경우는 더이상 사용할 수 있는 콜 스택이 없다는 의미이다. 따라서 더이상 (depth가 깊어지는)호출을 생성할 수 없다.
 
-# Rationale
+# 해석(Rationale)
 
 The actual call stack depth, as well as the call stack depth limit, are present in the EVM during execution, but just not available within the EVM. The implementation should be fairly simple and would provide a cheap and way to protect against call stack attacks.
 실제 콜 스택 깊이 뿐만 아니라 콜스택 깊이의 제한은 EVM이 실행되는 동안 존재하다. 이 기능에 대한 구현은 매우 단순하고 저렴하며, "콜 스택 공격"으로 부터 방어하기 위한 방법이 되어야 한다. 
 
-# Implementation
+# 구현(Implementation)
 
 Not implemented.
