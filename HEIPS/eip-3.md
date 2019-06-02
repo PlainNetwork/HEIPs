@@ -26,11 +26,11 @@ This behaviour makes it possible to subject a contract to a "call stack attack" 
 Example(예시):
 
 1. Contract `A` want's to be invoked regularly, and pays Ether to the invoker in every block.
-    컨트랙트 `A` 는 매 블럭마다 정기적으로 호출되어 호출자에게 이더를 전송(지불)한다.
+    컨트랙트 `A` 는 매 블럭마다 정기적으로 간접호출되어 간접호출자에게 이더를 전송(지불)한다.
 2. When contract `A` is invoked, it calls contracts `B` and `C`, which consumes a lot of gas. After invocation, contract `A` pays Ether to the caller.
-    컨트랙트 `A`가 호출될때, 해당 컨트랙트는 gas를 엄청나게 소모하는 `B`와 `C`를 호출(call) 한다. (컨트랙트에 의한) 호출 이후, 컨트랙트 `A`는 호출자에게 이더를 전송한다.
+    컨트랙트 `A`가 간접호출될때, 해당 컨트랙트는 gas를 엄청나게 소모하는 `B`와 `C`를 호출 한다. (컨트랙트에 의한) 간접호출 이후, 컨트랙트 `A`는 호출자에게 이더를 전송한다.
 3. Malicious user `X` ensures that the stack depth is shallow before invoking A. Both calls to `B` and `C` fail, but `X` can still collect the reward.
-    악의적인 사용자 `X`는 
+    악의적인 사용자 `X`는 간접호출 하기 이전에 해당 스택 깊이를 (stack depth가 거의 차도록) 얕게 만들어 놓는다. 그렇게 될 경우 `B`와 `C`를 호출하는 동작은 실패하지만, 사용자 `X` 는 여전히 (정기적 간접호출을 통해) 보상을 취할 수 있다.. 
 
 It is possible to defend against this in two ways:
 아래 두가지 방법을 통해 해당 공격을 막을 수 있다.
