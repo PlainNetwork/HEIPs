@@ -53,7 +53,7 @@ The opcode `CALLDEPTH` should return the remaining call stack depth. A value of 
 # Rationale
 
 The actual call stack depth, as well as the call stack depth limit, are present in the EVM during execution, but just not available within the EVM. The implementation should be fairly simple and would provide a cheap and way to protect against call stack attacks.
-실제 콜 스택 깊이 뿐만 아니라 콜스택 깊이의 제한은 EVM 실행을 보여준다. // TODO
+실제 콜 스택 깊이 뿐만 아니라 콜스택 깊이의 제한은 EVM이 실행되는 동안 존재하다. 이 기능에 대한 구현은 매우 단순하고 저렴하며, "콜 스택 공격"으로 부터 방어하기 위한 방법이 되어야 한다. 
 
 # Implementation
 
