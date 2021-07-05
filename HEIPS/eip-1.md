@@ -1,249 +1,248 @@
 ---
 eip: 1
-title: EIP Purpose and Guidelines
+title: EIP의 목적과 가이드라인
 status: Active
 type: Meta
-author: Martin Becze <mb@ethereum.org>, Hudson Jameson <hudson@ethereum.org>, and others
-        https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md
-created: 2015-10-27
-updated: 2015-12-07, 2016-02-01, 2018-03-21, 2018-05-29, 2018-10-17
+author: Ludorum Jeoun <ludy@plain.network> Hun Ryu <hunryu@plain.network>
+        https://github.com/PlainNetwork/EIPs/blob/master/EIPS/eip-1.md
+created: 2019-04-02
+updated: 2019-04-16
 ---
 
-## What is an EIP?
+## Handy EIP
+이더리움은 오픈소스 프로젝트이다. 프로토콜에 대한 새로운 아이디어가 있을때마다 깃헙의 EIP시스템을 통해 제안되고 논의된다. 현재 블록체인을 조금이라도 공부해본 이라면 들어봤을 ERC-20, ERC-721을 비롯하여 여타 자잘한 수정사항부터 하드포크와 같이 큰 규모의 변경사항까지 모두 EIP를 통해 논의되고 결정되었다. EIP는 수 많은 논의와 발전 방향이 담긴 이더리움의 역사책이라 봐도 무방하다. 그만큼 EIP는 이더리움 관련 문서들 가운데 가장 영향력이 크다. 또한 은근히 재밌고 흥미로운 내용들도 존재한다. 
 
-EIP stands for Ethereum Improvement Proposal. An EIP is a design document providing information to the Ethereum community, or describing a new feature for Ethereum or its processes or environment. The EIP should provide a concise technical specification of the feature and a rationale for the feature. The EIP author is responsible for building consensus within the community and documenting dissenting opinions.
+이더리움에 대한 공부를 시작할때도 EIP를 순서대로 따라가며 차근차근 익히다보면 이더리움이 어떻게 발전되어 왔고 그 기반이 되는 지식들 역시 습득할 수 있다 생각한다. 하지만 기존의 EIP는 영어로 작성되어 있고 기반 지식에 대한 해설이 입문자 입장에서 충분하지 않다 보니 한국 사용자들에게 어려운 것은 사실이다. 또한 기술적인 부분이 다수 포함되어 있어 비개발자에게 어렵게 느껴지는 것도 사실이다. Handy EIP는 이러한 문제들을 해결하고 더욱 많은 사람들이 이더리움에 대해 공부할 수 있도록 돕기 위해 시작된 오픈소스 프로젝트이다. 기존 EIP 문서를 그대로 번역하는 것만이 아닌, 흐름이 최대한 원활히 이어지도록 해설과 예시도 포함될 예정이다.
 
-## EIP Rationale
+## EIP가 무엇인가?
+비트코인에 BIP가 있듯 이더리움에도 EIP가 존재한다. EIP는 Ethereum Improvement Proposal의 약자로서 이더리움 개선 제안을 의미한다. 말그대로 EIP는 이더리움 커뮤니티에 정보를 제공하거나 이더리움의 새로운 기능을 소개하는 설계 문서와 같다. EIP는 제안하고자 하는 기능과 이유에 대해 기술적으로 명확히 설명해야 한다. EIP 작성자는 제안한 EIP에 대해 커뮤니티의 합의를 이끌어내야 하며, 반대의견에 대해 기록해야할 의무가 존재한다. 제 아무리 비탈릭이라 하더라도 EIP를 그냥 통과시킬 순 없다. 실제로 비탈릭이 제안한 몇몇 EIP 역시 수 많은 토론을 통해 적용된 바 있다.
 
-We intend EIPs to be the primary mechanisms for proposing new features, for collecting community technical input on an issue, and for documenting the design decisions that have gone into Ethereum. Because the EIPs are maintained as text files in a versioned repository, their revision history is the historical record of the feature proposal.
+## EIP 시스템을 왜 사용하는가?
+EIP는 새로운 기능을 제안하는데 요구되는 최우선 메커니즘으로 활용되고, 이슈에 대한 커뮤니티의 기술적 조언을 모우고, 이더리움에 적용되는 설계적 결정들을 문서화하기 위함이다. EIP는 versioned repository(각 업데이트마다 변경된 히스토리를 저장하는 리포지토리)에 텍스트 파일로 유지될 것이기 때문에  EIP의 변경 사항은 문서화되어 모두 기록으로 남아있다.
 
-For Ethereum implementers, EIPs are a convenient way to track the progress of their implementation. Ideally each implementation maintainer would list the EIPs that they have implemented. This will give end users a convenient way to know the current status of a given implementation or library.
+이더리움을 도입하고자 하는 분들에게 EIP는 실질적인 도입 단계를 추적할 수 있는 매우 유용한 방법이다. 이상적으로는 그들이 도입한 EIP를 리스트로 남겨두면 좋을 듯 하다. 이를 통해 해당 서비스의 엔드 유저는 해당 서비스의 도입 단계를 보다 쉽게 파악할 수 있다.
 
-## EIP Types
+## EIP 타입
 
-There are three types of EIP:
+EIP에는 3가지 타입이 존재한다:
+- **Standard Track EIP** 네트워크 프로토콜, 블록 혹은 거래 증명 방식에 대한 개선 사항, 어플리케이션 규격, 이더리움 기반의 어플리케이션에 대한 상호 운용성 등 이더리움에 전체적으로 영향을 끼치는 모든 개선 사항을 포함한다. Standard EIP는 아래와 같은 카테고리로 나눠질 수 있다. Standard Track EIP는 설계 문서를 작성 후 구현 검증이 끝난 후 이더리움 황서에 업데이트된다.
+  - **Core** - [EIP5], [EIP101]과 같은 컨센서스 포크를 요구하는 개선 사항 혹은 컨센서스와 크게 상관이 없더라도 [“코어 개발자” 논의 사항](https://github.com/ethereum/pm)과 관련된 사안들이 포함된다. [EIP90]을 비롯하여 채굴자/노드 전략 변경 내용이 포함된 [EIP86]의 2, 3, 4번이 그 예시이다.
+  - **Networking** - [devp2p]([EIP8]) 및 [Light Ethereum Subprotocol]을 포함하여 [Whisper] & [Swarm]과 같은 네트워크 프로토콜 스펙에 대한 개선 제안을 포함한다.
+  - **Interface** - ([EIP6]) 및 [Contract ABIs]와 같은 리네이밍(Renaming)을 포함하여 클라이언트 [API/RPC] 스펙과 표준에 대한 개선 사항이다. 이는 EIP 리포지토리에 제출 되기 이전에 [interface repo]에서 사전 논의가 되어야 한다.
+  - **ERC** - ([ERC20]) 토큰 표준과 같은 컨트랙트 표준, ([ERC26], [ERC137])과 같은 이름 등록 방식, ([ERC67])과 같은 URI 양식, ([EIP82])과 같은 라이브러리/패키지 포맷, 그리고 ([EIP75], [EIP85])과 같은 지갑 포맷을 포함한 어플리케이션 레벨의 표준이다.
+- **Informational EIP**는 이더리움의 디자인 이슈 혹은 이더리움의 보편적인 가이드라인 및 설명에 대한 제안이며, 새로운 기능은 제안하지 않는다. Informational EIP는 이더리움 커뮤니티의 합의된 사항이라던지 권고사항이 아니며, 사용자와 개발자는 사실상 이를 무시해도 무관하다.
+- **Meta EIP**는 이더리움 프로세스 혹은 해당 프로세스에 대한 변경 사항을 제안한다. 모든 Meta EIP는 Process EIP이다. Process EIP는 Standards Track EIP와 비슷하지만 이더리움 프로토콜 이외의 분야에 적용된다. 이더리움 발전에 반영되는 안을 제안할 수 있으나 이더리움의 코드에는 반영되지 않는다. 또한, 커뮤니티의 합의를 도모해야할 수 있다. Informational EIP와는 다르게 이는 권고 사항이며, 사용자들은 이를 무시할 수 없다. 프로세스 관련 사항, 가이드라인, 의사 결정 과정에 대한 변경 사항, 그리고 이더리움 개발 도구들에 대한 변경 사항도 이에 된다.
 
-- A **Standard Track EIP** describes any change that affects most or all Ethereum implementations, such as a change to the the network protocol, a change in block or transaction validity rules, proposed application standards/conventions, or any change or addition that affects the interoperability of applications using Ethereum. Furthermore Standard EIPs can be broken down into the following categories. Standards Track EIPs consist of three parts, a design document, implementation, and finally if warranted an update to the [formal specification].
-  - **Core** - improvements requiring a consensus fork (e.g. [EIP5], [EIP101]), as well as changes that are not necessarily consensus critical but may be relevant to [“core dev” discussions](https://github.com/ethereum/pm) (for example, [EIP90], and the miner/node strategy changes 2, 3, and 4 of [EIP86]).
-  - **Networking** - includes improvements around [devp2p] ([EIP8]) and [Light Ethereum Subprotocol], as well as proposed improvements to network protocol specifications of [whisper] and [swarm].
-  - **Interface** - includes improvements around client [API/RPC] specifications and standards, and also certain language-level standards like method names ([EIP6]) and [contract ABIs]. The label “interface” aligns with the [interfaces repo] and discussion should primarily occur in that repository before an EIP is submitted to the EIPs repository.
-  - **ERC** - application-level standards and conventions, including contract standards such as token standards ([ERC20]), name registries ([ERC26], [ERC137]), URI schemes ([ERC67]), library/package formats ([EIP82]), and wallet formats ([EIP75], [EIP85]).
-- An **Informational EIP** describes an Ethereum design issue, or provides general guidelines or information to the Ethereum community, but does not propose a new feature. Informational EIPs do not necessarily represent Ethereum community consensus or a recommendation, so users and implementers are free to ignore Informational EIPs or follow their advice.
-- A **Meta EIP** describes a process surrounding Ethereum or proposes a change to (or an event in) a process. Process EIPs are like Standards Track EIPs but apply to areas other than the Ethereum protocol itself. They may propose an implementation, but not to Ethereum's codebase; they often require community consensus; unlike Informational EIPs, they are more than recommendations, and users are typically not free to ignore them. Examples include procedures, guidelines, changes to the decision-making process, and changes to the tools or environment used in Ethereum development. Any meta-EIP is also considered a Process EIP.
+하나의 EIP에 하나의 중요한 제안 혹은 아이디어만 포함되는 것을 권장한다. EIP가 하나의 아이디어에 집중되어야 성공할 확률이 높기 때문이다. 하나의 클라이언트에 대한 변경 사항에 EIP가 요구되지 않지만, 다수의 클라이언트 혹은 다수의 어플리케이션을 위한 표준에 대한 변경 사항에는 EIP가 요구된다.
 
-It is highly recommended that a single EIP contain a single key proposal or new idea. The more focused the EIP, the more successful it tends to be. A change to one client doesn't require an EIP; a change that affects multiple clients, or defines a standard for multiple apps to use, does.
+EIP는 최소한의 기준에 부합해야 한다. 제안의 목적이 뚜렷해야하며 개선 사항에 대한 완벽한 설명이 포함되어야 한다. 또한, 제안은 프로토콜을 지나치게 혼선시켜서는 안된다.
 
-An EIP must meet certain minimum criteria. It must be a clear and complete description of the proposed enhancement. The enhancement must represent a net improvement. The proposed implementation, if applicable, must be solid and must not complicate the protocol unduly.
+## EIP 워크 플로우
 
-## EIP Work Flow
+EIP 프로세스엔 3가지 그룹이 존재한다. 챔피언 혹은 *EIP 저자*라고 불리는 당신과 [*EIP 편집자*](#eip-editors), 그리고 [*이더리움 코어 개발자들*](https://github.com/ethereum/pm)이다.
 
-Parties involved in the process are you, the champion or *EIP author*, the [*EIP editors*](#eip-editors), and the [*Ethereum Core Developers*](https://github.com/ethereum/pm).
+:warning: EIP를 시작하기 전에 아이디어를 먼저 점검하면 많은 시간을 절약할 수 있다. 당신의 아이디어가 중복되지 않는지 확인하기 위해 이더리움 커뮤니티에 먼저 물어보자. 아이디어가 저자 본인에게 좋아보일 순 있으나, 그것이 커뮤니티 전체에 반영될 순 없다. 당신의 아이디어에 대해 토론하기 좋은 채널로는 [the Ethereum subreddit], [the Issues section of this repository], [one of the Ethereum Gitter chat rooms]가 있다. 특히 [the Issues section of this repository]는 당신의 제안에 대해 커뮤니티와 논의하고 공식화된 표준으로 EIP를 시작하기에 최적의 채널이다.
 
-:warning: Before you begin, vet your idea, this will save you time. Ask the Ethereum community first if an idea is original to avoid wasting time on something that will be be rejected based on prior research (searching the Internet does not always do the trick). It also helps to make sure the idea is applicable to the entire community and not just the author. Just because an idea sounds good to the author does not mean it will work for most people in most areas where Ethereum is used. Examples of appropriate public forums to gauge interest around your EIP include [the Ethereum subreddit], [the Issues section of this repository], and [one of the Ethereum Gitter chat rooms]. In particular, [the Issues section of this repository] is an excellent place to discuss your proposal with the community and start creating more formalized language around your EIP.
-
-Your role as the champion is to write the EIP using the style and format described below, shepherd the discussions in the appropriate forums, and build community consensus around the idea. Following is the process that a successful EIP will move along:
+EIP 저자는 아래에서 설명된 스타일과 포맷을 기반으로 EIP를 작성해야 하고, 적절한 포럼에서 논의를 이끌어 내야하며, 해당 아이디어에 대한 커뮤니티의 합의를 도모해야 한다. 아래 과정은 성공적인 EIP의 예시이다:
 
 ```
 [ WIP ] -> [ DRAFT ] -> [ LAST CALL ] -> [ ACCEPTED ] -> [ FINAL ]
 ```
 
-Each status change is requested by the EIP author and reviewed by the EIP editors. Use a pull request to update the status. Please include a link to where people should continue discussing your EIP. The EIP editors will process these requests as per the conditions below.
+위에서 명시된 각 상태에 대한 변경은 EIP 저자에 의해 요청되며 EIP 편집자에 의해 리뷰된다. 상태 변경은 pull request를 사용해야 한다. 당신의 EIP에 대한 논의를 이어갈 수 있는 링크를 포함해야 한다. EIP 편집자는 아래 설명된 조건에 따라 해당 요청들을 처리해야 한다.
 
-* **Active** -- Some Informational and Process EIPs may also have a status of “Active” if they are never meant to be completed. E.g. EIP 1 (this EIP).
-* **Work in progress (WIP)** -- Once the champion has asked the Ethereum community whether an idea has any chance of support, they will write a draft EIP as a [pull request]. Consider including an implementation if this will aid people in studying the EIP.
-  * :arrow_right: Draft -- If agreeable, EIP editor will assign the EIP a number (generally the issue or PR number related to the EIP) and merge your pull request. The EIP editor will not unreasonably deny an EIP.
-  * :x: Draft -- Reasons for denying draft status include being too unfocused, too broad, duplication of effort, being technically unsound, not providing proper motivation or addressing backwards compatibility, or not in keeping with the [Ethereum philosophy](https://github.com/ethereum/wiki/wiki/White-Paper#philosophy).
-* **Draft** -- Once the first draft has been merged, you may submit follow-up pull requests with further changes to your draft until such point as you believe the EIP to be mature and ready to proceed to the next status. An EIP in draft status must be implemented to be considered for promotion to the next status (ignore this requirement for core EIPs).
-  * :arrow_right: Last Call -- If agreeable, the EIP editor will assign Last Call status and set a review end date (`review-period-end`), normally 14 days later.
-  * :x: Last Call -- A request for Last Call status will be denied if material changes are still expected to be made to the draft. We hope that EIPs only enter Last Call once, so as to avoid unnecessary noise on the RSS feed.
-* **Last Call** -- This EIP will listed prominently on the https://eips.ethereum.org/ website (subscribe via RSS at [last-call.xml](/last-call.xml)).
-  * :x: -- A Last Call which results in material changes or substantial unaddressed technical complaints will cause the EIP to revert to Draft.
-  * :arrow_right: Accepted (Core EIPs only) -- A successful Last Call without material changes or unaddressed technical complaints will become Accepted.
-  * :arrow_right: Final (Not core EIPs) -- A successful Last Call without material changes or unaddressed technical complaints will become Final.
-* **Accepted (Core EIPs only)** -- This EIP is in the hands of the Ethereum client developers.  Their process for deciding whether to encode it into their clients as part of a hard fork is not part of the EIP process.
-  * :arrow_right: Final -- Standards Track Core EIPs must be implemented in at least three viable Ethereum clients before it can be considered Final. When the implementation is complete and adopted by the community, the status will be changed to “Final”.
-* **Final** -- This EIP represents the current state-of-the-art. A Final EIP should only be updated to correct errata.
+* **Active** -- 일부 Informational 및 Process EIP는 목적이 구현과 완성이 아니라면 "Active"라는 상태를 부여받을 수 있다. 예시: EIP1
+* **Work in progress (WIP)** -- EIP 저자가 아이디어가 지지를 얻을 수 있을 지 여부에 대해 커뮤니티에 물어보았다면 [pull request]로 EIP Draft를 작성할 수 있다. 어느 정도 구현이 되었다면 커뮤니티가 해당 EIP를 공부하는데 도움을 줄 수 있다.
+  * 승인 :arrow_right: Draft -- 제안된 EIP가 이 단계에서 수용될 경우 EIP 편집자는 EIP 넘버를 부여하고 해당 pull request를 병합한다. EIP 편집자는 이유없이 EIP를 거부할 수 없다.
+  * 거부 :x: Draft -- Draft 상태에서 거부되는 경우 다음과 같은 이유들이 존재한다. 해당 제안의 목적이 뚜렷하지 않다. 너무 광범위하다. 기술적으로 오류가 존재한다. 적절한 동기부여가 없다. 이전 버전과 호환되지 않는다. [이더리움 철학](https://github.com/ethereum/wiki/wiki/White-Paper#philosophy)에서 벗어난다.
+* **Draft** -- 첫 Draft가 병합된 경우 EIP 저자는 EIP를 더욱 발전시키고 다음 단계로 넘어갈 준비가 될 시점까지 pull request를 통해 Draft에 변경 사항들을 제출할 수 있다. EIP는 Draft 단계에서 구현이 되어야만 다음 단계로 넘어갈 수 있다.
+  * 승인 :arrow_right: Last Call -- 제안된 EIP가 이 단계에서 수용될 경우 EIP 편집자는 Last Call 상태를 부여하고 평균 14일 정도인 리뷰 종료 날짜(`review-period-end`)를 정한다.
+  * 거부 :x: Last Call -- Draft에 중요한 변경 사항이 예상되는 경우 Last Call로 넘어가는 요청이 거부된다. RSS 피드에서 불필요한 잡음을 피하기 위해 EIP가 Last Call 단계에 단 한번만 진입해야 한다.
+* **Last Call** -- 해당 EIP는 https://eips.ethereum.org/ 웹사이트에 등재된다. ([last-call.xml](/last-call.xml)에서 RSS를 통해 구독이 가능하다)
+  * 승인 :arrow_right: Accepted (코어 EIP만 해당) -- Last Call 상태에서 별다른 이슈가 없다면 Accepted 단계로 넘어간다.
+  * 승인 :arrow_right: Final (코어 EIP 제외) -- Last Call 상태에서 별다른 이슈가 없다면 Final 단계로 넘어간다.
+  * 거부 :x: -- Last Call 상태에서 중요한 변경사항이 존재하거나 기술적으로 큰 이슈가 존재한다면 해당 EIP는 Draft 단계로 복귀된다.
+* **Accepted (코어 EIP만 해당)** -- 해당 EIP는 이더리움 클라이언트 개발자가 관리한다. 하드포크의 일환으로 해당 EIP를 클라이언트에 인코딩할 지 여부는 EIP 과정의 일부가 아니다.
+  * 승인 :arrow_right: Final -- Standards Track Core EIP는 최소한 3곳의 이더리움 클라이언트에 반영되어야만 Final 상태로 넘어갈 수 있다. 구현이 완료되고 커뮤니티에 의해 채택될 경우 "Final" 상태로 변경된다.
+* **Final** -- 해당 EIP는 현재 최신 버전에 반영되었다는 것을 의미한다. Final 상태의 EIP는 오류 수정일 경우에만 업데이트가 가능다.
 
-Other exceptional statuses include:
+일부 예외적인 상태들 역시 존재한다.
 
-* **Deferred** -- This is for core EIPs that have been put off for a future hard fork.
-* **Rejected** -- An EIP that is fundamentally broken or a Core EIP that was rejected by the Core Devs and will not be implemented.
-* **Active** -- This is similar to Final, but denotes an EIP which may be updated without changing its EIP number.
-* **Superseded** -- An EIP which was previously final but is no longer considered state-of-the-art. Another EIP will be in Final status and reference the Superseded EIP.
+* **Deferred** -- 미래 진행될 하드 포크를 위해 연기된 코어 EIP이다.
+* **Rejected** -- 본질적으로 완전히 어긋난 EIP 혹은 코어 개발자에 의해 거부된 코어 EIP이다. 이는 이더리움 프로토콜에 반영되지 않는다.
+* **Active** -- Final과 비슷하지만 EIP 넘버 변경 없이 업데이트될 수 있는 EIP를 의미한다.
+* **Superseded** -- 이전에 Final 상태였으나 더이상 최신 버전으로 여겨지지 않는 EIP를 의미한다. 또 다른 EIP가 Final 상태로 있고 Superseded EIP를 참고할 수 있다.
 
-## What belongs in a successful EIP?
+## 성공적인 EIP를 작성하기 위한 방법
 
-Each EIP should have the following parts:
+EIP는 다음과 같은 사항들을 포함해야 한다:
 
-- Preamble - RFC 822 style headers containing metadata about the EIP, including the EIP number, a short descriptive title (limited to a maximum of 44 characters), and the author details. See [below](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md#eip-header-preamble) for details.
-- Simple Summary - “If you can’t explain it simply, you don’t understand it well enough.” Provide a simplified and layman-accessible explanation of the EIP.
-- Abstract - a short (~200 word) description of the technical issue being addressed.
-- Motivation (*optional) - The motivation is critical for EIPs that want to change the Ethereum protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the EIP solves. EIP submissions without sufficient motivation may be rejected outright.
-- Specification - The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations for any of the current Ethereum platforms (cpp-ethereum, go-ethereum, parity, ethereumJ, ethereumjs-lib, [and others](https://github.com/ethereum/wiki/wiki/Clients).
-- Rationale - The rationale fleshes out the specification by describing what motivated the design and why particular design decisions were made. It should describe alternate designs that were considered and related work, e.g. how the feature is supported in other languages. The rationale may also provide evidence of consensus within the community, and should discuss important objections or concerns raised during discussion.
-- Backwards Compatibility - All EIPs that introduce backwards incompatibilities must include a section describing these incompatibilities and their severity. The EIP must explain how the author proposes to deal with these incompatibilities. EIP submissions without a sufficient backwards compatibility treatise may be rejected outright.
-- Test Cases - Test cases for an implementation are mandatory for EIPs that are affecting consensus changes. Other EIPs can choose to include links to test cases if applicable.
-- Implementations - The implementations must be completed before any EIP is given status “Final”, but it need not be completed before the EIP is merged as draft. While there is merit to the approach of reaching consensus on the specification and rationale before writing code, the principle of “rough consensus and running code” is still useful when it comes to resolving many discussions of API details.
-- Copyright Waiver - All EIPs must be in the public domain. See the bottom of this EIP for an example copyright waiver.
+- 서론(Preamble) - EIP 넘버, 간략한 설명을 해주는 타이틀(44글자 제한)과 같이 해당 EIP에 대한 메타데이터가 명시된 RFC 822 스타일의 헤더를 포함한다. [여기](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md#eip-header-preamble)를 클릭하면 이에 대한 자세한 정보를 볼 수 있다.
+- 개요(Simple Summary) - "간단히 설명할 수 없다면 충분히 이해하고 있는 것이 아니다." 해당 EIP에 대해 비전문가 역시 이해할 수 있을 정도의 간소화된 설명을 포함해야 한다. 
+- 추상적 개념(Abstract) - 200단어 이내로 기술적 이슈를 설명해야 한다.
+- 동기(Motivation) (선택적) - 특히 이더리움 프로토콜을 변경하고자 하는 EIP에 동기는 매우 중요하다. 기존 프로토콜 스펙이 왜 적절하지 않은 지에 대해 명백히 설명해야 한다. 충분하지 않은 동기 없이 제출되는 EIP는 거부될 수 있다.
+- 스펙(Specification) - 새로운 기능에 대한 컴퓨터 공학적인 문법과 의미를 설명하는 기술적 스펙을 포함해야 한다. 해당 스펙은 기존의 이더리움 플랫폼(cpp-ethereum, go-ethereum, parity, ethereumJ, ethereumjs-lib, 및 [기타](https://github.com/ethereum/wiki/wiki/Clients))과 상호 운용될 수 있는 지에 대해 논의될 수 있을 만큼 자세해야 한다.
+- 근거(Rationale) - 근거는 해당 설계의 동기에 대해 설명하고 왜 이러한 설계가 결정되었는 지에 대해 서술하며 이전 스펙 과정을 구체화한다. 이 단계에서는 그동안 고려되었던 대안과 관련 작업들을 설명해야 한다. 해당 기능이 여타 프로그래밍 언어로 어떻게 지원되는 지에 대한 설명도 이에 포함된다. 또한, 커뮤니티의 합의에 대한 증거를 제시해야 하고 이전에 논의되었던 중요한 이의 사안들에 대해 논하여야 한다.
+- 호환성(Backwards Compatibility) - 호환성이 불가능한 점을 나타낸 모든 EIP는 비호환성 및 이에 대한 심각성을 서술하는 란을 반드시 포함해야 한다. 해당 EIP는 이러한 비호환성을 어떠한 방식으로 해결할 지에 대해 반드시 설명해야 한다. 비호환성에 대해 충분히 다뤄지지 않은 EIP는 거부될 수 있다.
+- 시험 사례(Test Cases) - 컨센서스와 관련된 변경 사항을 포함한 EIP는 시험 사례가 필수로 요구된다. 이를 제외한 EIP는 가능한 경우 링크를 포함할 수 있다.
+- 구현(Implementations) - 기술적 구현은 "Final" 상태를 부여받기 전 반드시 끝나야 한다. 코드를 작성하기 전 스펙과 근거에 대한 합의점을 도출하는 것 역시 가치 있지만, "거친 의견 일치와 작동하는 코드 aka 일단 닥치고 코딩(Rough consensus and running code)"은 API 디테일에 대한 수 많은 논의를 해결하는 데 여전히 유용하다.
+- 저작권 면제 - 모든 EIP는 퍼블릭 도메인이어야 한다. 저작권 면제에 대한 예시는 이 글의 하단에서 확인할 수 있다.
 
-## EIP Formats and Templates
+## EIP 포맷과 템플릿
 
-EIPs should be written in [markdown] format.
-Image files should be included in a subdirectory of the `assets` folder for that EIP as follow: `assets/eip-X` (for eip **X**). When linking to an image in the EIP, use relative links such as `../assets/eip-X/image.png`.
+EIP는 [markdown] 포맷으로 작성되어야 한다.
+이미지 파일은 `assets/eip-X` 같이 해당 EIP 내 `assets` 폴더의 서브디렉터리에 포함되어야 한다. 이미지를 EIP에 링크하는 경우 `../assets/eip-X/image.png`와 같은 관련 링크를 사용한다.
 
-## EIP Header Preamble
+## EIP 헤더 서론
 
-Each EIP must begin with an RFC 822 style header preamble, preceded and followed by three hyphens (`---`). The headers must appear in the following order. Headers marked with "*" are optional and are described below. All other headers are required.
+각 EIP는 3개의 하이픈(`---`)이 앞뒤로 포함된 RFC 822 스타일의 헤더 서론으로 시작되어야 한다. 헤더는 아래와 같은 순서로 나타난다. "*"로 마크된 헤더는 선택적이지만 다른 헤더들은 요구된다.
 
-` eip:` <EIP number> (this is determined by the EIP editor)
+` eip:` <EIP 넘버> (이는 EIP 편집자에 의해 결정되고 부여된다)
 
-` title:` <EIP title>
+` title:` <EIP 타이틀>
+        
+` author:` <저자의 이름 혹은 유저네임, 그리고 이메일>
 
-` author:` <a list of the author's or authors' name(s) and/or username(s), or name(s) and email(s). Details are below.>
-
-` * discussions-to:` \<a url pointing to the official discussion thread\>
+` * discussions-to:` \<공식적인 논의가 이뤄진 스레드(thread) 링크\>
 
 ` status:` <Draft | Last Call | Accepted | Final | Active | Deferred | Rejected | Superseded>
 
-`* review-period-end:` <date review period ends>
+`* review-period-end:` <리뷰 종료 날짜>
 
 ` type:` <Standards Track (Core, Networking, Interface, ERC)  | Informational | Meta>
 
 ` * category:` <Core | Networking | Interface | ERC>
 
-` created:` <date created on>
+` created:` <생성된 날짜>
 
-` * updated:` <comma separated list of dates>
+` * updated:` <업데이트된 날짜들>
 
-` * requires:` <EIP number(s)>
+` * requires:` <요구되는 EIP 넘버>
 
-` * replaces:` <EIP number(s)>
+` * replaces:` <대체되는 EIP 넘버>
 
-` * superseded-by:` <EIP number(s)>
+` * superseded-by:` <Superseded된 EIP 넘버>
 
-` * resolution:` \<a url pointing to the resolution of this EIP\>
+` * resolution:` \<해당 EIP에 대한 결의안 링크\>
 
-Headers that permit lists must separate elements with commas.
+다수의 답변이 허용되는 헤더들은 컴마로 구분할 수 있다.
 
-Headers requiring dates will always do so in the format of ISO 8601 (yyyy-mm-dd).
+날짜를 요구하는 헤더들은 항상 ISO 8601 (yyyy-mm-dd) 포맷을 따른다.
 
-#### `author` header
+#### `author` 헤더
 
-The `author` header optionally lists the names, email addresses or usernames of the authors/owners of the EIP. Those who prefer anonymity may use a username only, or a first name and a username. The format of the author header value must be:
+`author` 헤더는 해당 EIP 저자의 이름, 이메일 주소, 혹은 유저네임을 선택적으로 포함해야 한다. 익명을 선호하는 저자는 유저네임만 사용하거나 성을 제외한 이름만 사용할 수 있다. 저자 헤더의 포맷은 다음과 같다:
 
 > Random J. User &lt;address@dom.ain&gt;
 
-or
+혹은
 
 > Random J. User (@username)
 
-if the email address or GitHub username is included, and
+이메일/깃헙 유저네임이 포함된 경우,
 
 > Random J. User
 
-if the email address is not given.
+이메일 주소가 포함되지 않은 경우.
 
-#### `resolution` header
+#### `resolution` 헤더
+`resolution` 헤더는 Standards Track EIP에만 요구된다. 해당 EIP에 대한 선언문이 생성된 여타 웹 사이트 혹은 이메일 메시지에 대한 URL 링크를 포함해야 한다.
 
-The `resolution` header is required for Standards Track EIPs only. It contains a URL that should point to an email message or other web resource where the pronouncement about the EIP is made.
+#### `discussions-to` 헤더
 
-#### `discussions-to` header
+EIP가 드래프트인 경우 `discussions-to` 헤더는 해당 EIP에 대해 논의 중인 메일링 리스트 혹은 URL 링크를 연결하기 위해 사용된다. 앞서 언급된 바외 같이 EIP에 대해 논의할 수 있는 장은 [Ethereum topics on Gitter](https://gitter.im/ethereum/topics), [Ethereum Magicians](https://ethereum-magicians.org/), [Reddit r/ethereum](https://www.reddit.com/r/ethereum/) 등이 있다.
 
-While an EIP is a draft, a `discussions-to` header will indicate the mailing list or URL where the EIP is being discussed. As mentioned above, examples for places to discuss your EIP include [Ethereum topics on Gitter](https://gitter.im/ethereum/topics), an issue in this repo or in a fork of this repo, [Ethereum Magicians](https://ethereum-magicians.org/) (this is suitable for EIPs that may be contentious or have a strong governance aspect), and [Reddit r/ethereum](https://www.reddit.com/r/ethereum/).
+해당 EIP가 저자와 개인적으로 논의 중인 경우 `discussions-to`는 필요하지 않다.
 
-No `discussions-to` header is necessary if the EIP is being discussed privately with the author.
+또한, `discussions-to`는 깃헙 pull request 링크를 걸 수 없다.
 
-As a single exception, `discussions-to` cannot point to GitHub pull requests.
+#### `type` 헤더
 
-#### `type` header
+`type` 헤더는 Standards Track, Meta, Informational과 같은 EIP 타입을 정한다. 만약 Standards Track인 경우 Core, Networking, Interface, ERC 가운데 하나를 포함해야 한다.
 
-The `type` header specifies the type of EIP: Standards Track, Meta, or Informational. If the track is Standards please include the subcategory (core, networking, interface, or ERC).
+#### `category` 헤더
 
-#### `category` header
+`category` 헤더는 EIP의 카테고리를 세분화한다. 이는 Standards Track인 경우에만 해당한다.
 
-The `category` header specifies the EIP's category. This is required for standards-track EIPs only.
+#### `created` 헤더
 
-#### `created` header
+`created` 헤더는 해당 EIP가 넘버를 부여받은 날짜를 기록한다. 이 헤더는 1991-10-02과 같이 yyyy-mm-dd 포맷으로 작성되어야 한다.
 
-The `created` header records the date that the EIP was assigned a number. Both headers should be in yyyy-mm-dd format, e.g. 2001-08-14.
+#### `updated` 헤더
 
-#### `updated` header
+`updated` 헤더는 해당 EIP에 대해 중요한 변경 사항이 반영된 날짜를 기록한다. 이 헤더는 Draft 혹은 Active 상태의 EIP에만 해당된다.
 
-The `updated` header records the date(s) when the EIP was updated with "substantional" changes. This header is only valid for EIPs of Draft and Active status.
+#### `requires` 헤더
 
-#### `requires` header
+EIP는 해당 EIP가 기반으로 하는 다른 EIP의 넘버를 표시할 수 있다. 
 
-EIPs may have a `requires` header, indicating the EIP numbers that this EIP depends on.
+#### `superseded-by` 및 `replaces` 헤더
 
-#### `superseded-by` and `replaces` headers
+최신 EIP에 의해 더 이상 필수로 요구되지 않는 EIP인 경우 `superseded-by` 헤더를 포함할 수 있다. 해당 헤더에는 최신 EIP의 넘버를 입력한다. 최신 EIP는 `replaces` 헤더에 대체하기 이전에 사용되던 EIP의 넘버를 포함할 수 있다.
 
-EIPs may also have a `superseded-by` header indicating that an EIP has been rendered obsolete by a later document; the value is the number of the EIP that replaces the current document. The newer EIP must have a `replaces` header containing the number of the EIP that it rendered obsolete.
+## 보조 파일
 
-## Auxiliary Files
+EIP는 다이어그램과 같은 보조 파일을 포함할 수 있다. 파일의 이름은 EIP-XXXX-Y.ext로 기록되어 있어야 한다. XXXX는 EIP 넘버이고, Y는 시리얼 넘버(1부터 시작)이며, ext는 png와 같은 실제 파일 형식을 대체한다.
 
-EIPs may include auxiliary files such as diagrams. Such files must be named EIP-XXXX-Y.ext, where “XXXX” is the EIP number, “Y” is a serial number (starting at 1), and “ext” is replaced by the actual file extension (e.g. “png”).
+## EIP 소유권 이전
 
-## Transferring EIP Ownership
+가끔 새로운 저자에게 EIP의 소유권을 이전하는 경우가 발생한다. 기존 저자를 해당 EIP의 공동 저자로 유지하고 싶으나 이는 전적으로 기존 저자의 선택에 달려있다. 소유권 이전이 발생하는 이유는 여러가지 존재한다. 저자가 더 이상 기여할 여력이 안되는 경우, 더 이상 흥미를 느끼지 않는 경우, 더 이상 연락이 안되는 경우 등이 존재한다. 혹은 해당 EIP의 방향성에 대해 더 이상 동의하지 않아서일 수도 있다. 이더리움은 모든 EIP에 대해 합의를 이루고자 노력하나 만약 불가능한 경우 이에 상응하는 EIP를 제출할 수 있다.
 
-It occasionally becomes necessary to transfer ownership of EIPs to a new champion. In general, we'd like to retain the original author as a co-author of the transferred EIP, but that's really up to the original author. A good reason to transfer ownership is because the original author no longer has the time or interest in updating it or following through with the EIP process, or has fallen off the face of the 'net (i.e. is unreachable or isn't responding to email). A bad reason to transfer ownership is because you don't agree with the direction of the EIP. We try to build consensus around an EIP, but if that's not possible, you can always submit a competing EIP.
+만약 특정 EIP 소유권에 관심있다면 기존 저자 혹은 EIP 편집자에게 메시지를 보내면 된다. 만약 기존 저자로부터 답장을 받지 못하는 경우 EIP 편집자가 단독적인 결정을 할 수 있다. 단, 이러한 결정은 충분히 번복될 수 있다.
 
-If you are interested in assuming ownership of an EIP, send a message asking to take over, addressed to both the original author and the EIP editor. If the original author doesn't respond to email in a timely manner, the EIP editor will make a unilateral decision (it's not like such decisions can't be reversed :)).
+## EIP 편집자
 
-## EIP Editors
+현재 EIP 편집자 목록은 다음과 같다:
 
-The current EIP editors are
+` * 닉 존슨(Nick Johnson) (@arachnid)`
 
-` * Nick Johnson (@arachnid)`
+` * 캐시 디트리오(Casey Detrio) (@cdetrio)`
 
-` * Casey Detrio (@cdetrio)`
+` * 허드슨 제임슨(Hudson Jameson) (@Souptacular)`
 
-` * Hudson Jameson (@Souptacular)`
+` * 비탈릭 뷰테린(Vitalik Buterin) (@vbuterin)`
 
-` * Vitalik Buterin (@vbuterin)`
+` * 닉 세이버스(Nick Savers) (@nicksavers)`
 
-` * Nick Savers (@nicksavers)`
+` * 마틴 비지(Martin Becze) (@wanderer)`
 
-` * Martin Becze (@wanderer)`
+## EIP 편집자의 의무 사항
 
-## EIP Editor Responsibilities
+새로운 EIP가 들어올때마다 편집자는 다음과 같은 과정을 처리한다:
 
-For each new EIP that comes in, an editor does the following:
+- 해당 EIP가 준비되었는지 체크하기 위해 정독한다. 아이디어가 Final 상태까지 이르지 못할 것 같아 보이더라도 EIP는 기술적으로 편집자를 이해시킬 수 있어야 한다.
+- 타이틀이 내용을 정확히 설명해야 한다.
+- 스펠링, 문법, 문장 구조 등 기본적인 언어, 깃헙 스타일의 마크다운 형식, 그리고 코드 스타일을 체크해야 한다.
 
-- Read the EIP to check if it is ready: sound and complete. The ideas must make technical sense, even if they don't seem likely to get to final status.
-- The title should accurately describe the content.
-- Check the EIP for language (spelling, grammar, sentence structure, etc.), markup (Github flavored Markdown), code style
+만약 EIP가 충분히 준비되지 않은 경우 편집자는 자세한 설명이 포함된 수정 사항을 저자에게 제공한다.
 
-If the EIP isn't ready, the editor will send it back to the author for revision, with specific instructions.
+EIP가 리포지터리에 올라갈 준비가 된 경우 편집자는 다음과 같은 과정을 처리한다:
 
-Once the EIP is ready for the repository, the EIP editor will:
+- EIP 넘버를 부여한다. 보통 pull request 넘버로 부여되며, 저자가 원할 경우에는 해당 EIP에 대한 논의가 이뤄진 Issue 넘버로 부여될 수 있다.
 
-- Assign an EIP number (generally the PR number or, if preferred by the author, the Issue # if there was discussion in the Issues section of this repository about this EIP)
+- 관련 pull request를 병합한다.
 
-- Merge the corresponding pull request
+- 다음 과정을 설명하는 메시지를 EIP 저자에게 전달한다.
 
-- Send a message back to the EIP author with the next step.
+수 많은 EIP는 이더리움 코드베이스에 작성 권한을 보유한 개발자들에 의해 작성되며 유지되고 있다. EIP 편집자들은 EIP 수정 사항을 모니터링하고, 구조, 문법, 스펠링, 마크업 이슈들을 정리한다.
 
-Many EIPs are written and maintained by developers with write access to the Ethereum codebase. The EIP editors monitor EIP changes, and correct any structure, grammar, spelling, or markup mistakes we see.
+편집자들은 EIP에 대한 재단을 내리지 않는다. 편집자들은 그저 행정 및 편집과 관련된 부분을 수행할 뿐이다.
 
-The editors don't pass judgment on EIPs. We merely do the administrative & editorial part.
+## 역사
 
-## History
+EIP 1 문서는 아미르 타키(Amir Taaki)가 작성한 [Bitcoin's BIP-0001]로부터 파생되었다. [Bitcoin's BIP-0001]은 [Python's PEP-0001]로부터 파생된 바 있다. EIP 1는 복사되었거나 수정된 것이 대부분이다. PEP-0001는 EIP와 관련없는 복수의 개발자들에 의해 작성되었기 때문에 EIP와 관련된 제안 사항들은 모두 EIP 편집자들에게 전달되어야 한다.
 
-This document was derived heavily from [Bitcoin's BIP-0001] written by Amir Taaki which in turn was derived from [Python's PEP-0001]. In many places text was simply copied and modified. Although the PEP-0001 text was written by Barry Warsaw, Jeremy Hylton, and David Goodger, they are not responsible for its use in the Ethereum Improvement Process, and should not be bothered with technical questions specific to Ethereum or the EIP. Please direct all comments to the EIP editors.
+2015년 12월 7일: EIP 1이 개선되었으며 pull request로 지정되었다.
 
-December 7, 2015: EIP 1 has been improved and will be placed as a PR.
+2016년 2월 1일: EIP 1에 편집자들이 추가되었고, 과정에 대한 개선 사항 초안이 생성되었으며 Master 스트림에 병합되었다.
 
-February 1, 2016: EIP 1 has added editors, made draft improvements to process, and has merged with Master stream.
+2018년 5월 21일: [eips.ethereum.org](https://eips.ethereum.org/)에 적용된 새로운 자동 생성 EIP 디렉터리를 반영한 마이너한 수정이 있었다.
 
-March 21, 2018: Minor edits to accommodate the new automatically-generated EIP directory on [eips.ethereum.org](https://eips.ethereum.org/).
+2018년 5월 29일: Last Call 과정이 추가되었다.
 
-May 29, 2018: A last call process was added.
+2018년 10월 17일: `updated` 헤더가 도입되었다.
 
-Oct 17, 2018: The `updated` header was introduced.
-
-See [the revision history for further details](https://github.com/ethereum/EIPs/commits/master/EIPS/eip-1.md), which is also available by clicking on the History button in the top right of the EIP.
-
-### Bibliography
+EIP 1에 대한 변경 사항들은 [여기](https://github.com/ethereum/EIPs/commits/master/EIPS/eip-1.md)에서 확인할 수 있으며, 또는 해당 EIP의 상단 오른쪽에 위치한 History 버튼을 클릭하여 확인 가능하다.
 
 [EIP5]: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-5.md
 [EIP101]: https://github.com/ethereum/EIPs/issues/28
@@ -274,6 +273,9 @@ See [the revision history for further details](https://github.com/ethereum/EIPs/
 [Bitcoin's BIP-0001]: https://github.com/bitcoin/bips
 [Python's PEP-0001]: https://www.python.org/dev/peps/
 
-## Copyright
+## EIP 저작권
 
-Copyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
+저작권과 그와 관련된 권리는 [CC0](https://creativecommons.org/publicdomain/zero/1.0/)를 통해 면제된다.
+
+## Handy EIP 저작권
+CC-BY-SA
